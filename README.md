@@ -56,10 +56,11 @@ These builds aren't signed yet, so the first launch needs one extra step:
 
 Krate updates itself. When a new version is out, a blue banner at the top
 offers it: **Download update**, then **Restart and update**. Or choose
-**Skip this version** or **Later**. **What's new?** in the banner shows
-what changed in that version before you install it, and after updating
-Krate shows it once more (any time later: Settings → About → **What's new
-in this version**). Updates are signed, and Krate only
+**Skip this version** or **Later**. **See what's new** in the banner shows
+what changed in that version before you install it; the pop-up links to
+the release on GitHub. After updating, a small banner says so, again with
+**See what's new** (any time later: Settings → About → **What's new in
+this version**). Updates are signed, and Krate only
 installs updates that come from Krate's own releases. Krate never restarts
 by itself, and you can't restart while it's writing to a library. How Krate
 handles updates is set in [Settings](#settings).
@@ -103,8 +104,15 @@ Click **Import Rekordbox library** or **Import Engine DJ library** (later on, th
 folder somewhere else (for example on a USB drive).
 
 You can import several libraries; pick one in the sidebar. Imported
-libraries update themselves: every time Krate starts (and after a sync,
-Tidy or restore), it re-reads any library that changed.
+libraries update themselves: every time Krate starts, when you switch
+back to Krate's window, and after a sync, Tidy or restore, it re-reads
+any library that changed.
+
+Each time Krate starts, it also looks for DJ libraries on this computer
+that aren't in Krate yet. If it finds one, a banner at the top offers to
+add it (with several, tick the ones you want). **Not now** asks again next
+time; tick **Don't ask again** to stop being asked about it. You can undo
+that in Settings → General.
 
 ---
 
@@ -117,8 +125,13 @@ Tidy or restore), it re-reads any library that changed.
 - The **search** box filters by title, artist, album, genre, label and comment.
 - Click a **column header** to sort. Drag a header to move its column,
   and drag a header's right edge to make the column wider or narrower
-  (double-click the edge for the standard width). Right-click the headers
-  and choose **Reset columns** to go back to the standard layout.
+  (double-click the edge for the standard width). **Right-click the
+  headers** to show or hide columns (a ✓ marks the ones shown; Title is
+  always shown), or choose **Reset columns** to go back to the standard
+  layout.
+- **Format** shows the file type (MP3, AIFF, WAV, FLAC, …). **Bitrate** and
+  **Label** are hidden at first; turn them on with a right-click on the
+  headers.
 - Drag the **sidebar's right edge** to make it wider or narrower; drag it
   far to the left, or click **‹** next to "Libraries", to hide it. Click
   the thin strip with **›** to bring it back. Krate remembers the layout.
@@ -179,7 +192,29 @@ On a deck:
 - **▶ / ❚❚:** play and pause.
 - **Hot cues A–H:** the thin bars at the top of each deck's controls. A
   bar lights in the cue's colour (with its name, if it has one) when the
-  track has that hot cue; click it to jump there and play.
+  track has that hot cue; click it to jump there and play. Click an empty
+  bar to set that hot cue where the deck is. Right-click a hot cue to delete
+  it, move it to where the deck is, or change its colour.
+- **◁ MEMORY ▷:** **MEMORY** stores a memory cue where the deck is (when
+  stopped, that spot also becomes the cue point). If there's already a
+  memory cue there, it goes to it instead of adding a second one. ◁ and ▷
+  jump to the previous or next memory cue and make it the cue point.
+  Parked on a memory cue, the button reads **DELETE** and removes it.
+- **Q (quantize):** new hot cues and memory cues snap to the nearest beat,
+  and jumping to a hot cue while playing keeps the beat (it lands as far
+  past the cue as the deck was past its beat). Krate remembers the setting.
+- **GRID:** beatgrid tools, shown instead of the mixing tools: **‹ ›** move
+  the grid 1 ms earlier or later (**« »** 10 ms), **Beat 1 here** makes the
+  playhead the first beat of a bar, and the tempo box sets the grid's BPM
+  (type a value and press Enter, or use − / + for 0.01 BPM, **½** / **×2**).
+  Changing the tempo makes the grid steady, keeping the beat nearest the
+  playhead in place. Sync and the phase meter follow the edited grid.
+  **Done** goes back to the mixing tools.
+- **EDITED:** appears when a track's cues or grid were changed in Krate.
+  Edits are saved in Krate (for that audio file, in every library). Click
+  EDITED to go back to the library's own cues or grid, or choose **Save
+  edits to Engine DJ / Rekordbox…** to open Sync → Cue & grid edits (see
+  [Saving cue and grid edits](#saving-cue-and-grid-edits)).
 - **Volume:** the deck's volume, in percent.
 - **EQ:** the bands of the mixer chosen in Settings →
   Player & mixer, highs on the left. As knobs: drag up or down (hold Shift
@@ -239,6 +274,10 @@ Sync copies your Rekordbox playlists, tracks, cue points, loops and
 beatgrids into Engine DJ, so you can play the same library on Denon
 gear.
 
+Sync has two parts, switched at the top: **Libraries** (described here)
+and **Cue & grid edits** (saving what you changed in Krate's player; see
+below).
+
 1. **From:** your Rekordbox library (or a Rekordbox XML export).
    **To:** your Engine DJ library. Krate finds both automatically; use
    **Change…** to pick another location.
@@ -265,6 +304,37 @@ gear.
 Cue points line up exactly between the apps, including the small timing
 difference Rekordbox and Engine DJ have with some MP3 files.
 
+### Saving cue and grid edits
+
+Hot cues, memory cues and beatgrids you change in Krate's player stay in
+Krate until you save them into your DJ library. Open **Sync → Cue & grid
+edits** (the number shows how many tracks you've edited), or click
+**EDITED** on a deck and choose **Save edits to Engine DJ / Rekordbox…**.
+
+1. **To:** **Engine DJ** or **Rekordbox 6/7**, found automatically. Use
+   **Change…** to pick another library, such as the `Engine Library`
+   folder on a USB drive.
+2. The list shows every edited track: what you edited in Krate, and what
+   saving changes in that library, for example "Hot cues 3 → 5, grid
+   replaced". **Up to date** means the library already has exactly these.
+   **Not in this library** tracks need adding (or syncing) first; **Not
+   analysed in Engine yet** tracks need loading in Engine DJ once.
+3. Tick the tracks to save. Everything that would change starts ticked.
+4. Click **Save … tracks**. The DJ app must be closed. Krate backs up its
+   library first; restore it from Backups if you change your mind.
+
+**Engine DJ:** Krate's hot cues replace Engine's for those tracks, and the
+beatgrid replaces Engine's. Memory cues stay in Krate (Engine DJ has
+none) and loops aren't touched.
+
+**Rekordbox:** Krate's hot cues and memory cues replace Rekordbox's for
+those tracks. Loops aren't touched, except a hot loop in a slot that now
+holds a Krate hot cue. Beatgrids aren't saved to Rekordbox yet (they live
+in Rekordbox's analysis files; that comes later). Cue colours Krate can
+match exactly are kept; others get Rekordbox's default green for now. If
+your library uses Cloud Library Sync, Krate says so: Rekordbox then sends
+the saved cues to your other computers when it next syncs.
+
 ---
 
 ## Tidy: cleaning up your library
@@ -284,12 +354,17 @@ go to** shows where fixes are written:
 - **Engine DJ** – if ticked, Engine DJ's library is kept in step (backed
   up first; Engine DJ must be closed).
 
+If you change a track in Rekordbox or Engine DJ after Tidy showed its
+preview, Krate notices when you apply: those changes are left out (and
+listed), so Tidy never overwrites an edit you made in the meantime. Scan
+again to see the current values.
+
 Tidy works on libraries on this computer. It doesn't change Rekordbox XML
 exports (they can be out of date) or USB sticks (those are exported
 copies: fix the library on your computer, then export again). USB sticks
 have their own check, see [USB stick](#usb-stick).
 
-### Health
+### Smart fixes
 
 A checklist of fixes that run together:
 
@@ -330,7 +405,7 @@ type a new name and click **Preview** to rename or merge them (e.g.
 "Deep house", "Deep-House" → "Deep House"). Leave the name empty to remove
 it from those tracks.
 
-### Files
+### Health
 
 **Check all files** reads every audio file (nothing is changed) and reports
 problems, grouped by how serious they are:
@@ -398,17 +473,20 @@ Settings are grouped in a sidebar:
   - **Don't check for updates.**
   - **Check now** looks right away. If you skipped a version, **Offer it
     again** brings it back.
+- **General → DJ libraries:** the libraries you chose not to be asked
+  about at startup. **Ask again** offers one again the next time Krate
+  starts.
 - **Appearance → Theme:** Dark, Light, Gray, High contrast or Classic
   Winamp.
-- **Appearance → Deck waveforms:** **Blue** (one colour), **Tri-band**
-  (bass, mids and highs layered in blue, orange and white) or **RGB**
-  (red = bass, green = mids, blue = highs).
 - **Appearance → Track list size:** a slider from smaller (more tracks on
   screen) to larger, with a preview; the list follows as you drag.
   **Reset** goes back to the standard size.
 - **Appearance → Album art:** show or hide covers in the track list and on
   the decks.
 - **Player & mixer:**
+  - **Deck waveforms:** **Blue** (one colour), **Tri-band** (bass, mids
+    and highs layered in blue, orange and white) or **RGB** (red = bass,
+    green = mids, blue = highs).
   - **When Krate starts:** **Start maximized**, **Start minimized** or
     **Remember the last state** (open or minimized, as you left it). Also
     **Minimize on other screens** (on unless you turn it off): collapses the
@@ -460,7 +538,8 @@ Hover over a badge for details.
 
 Planned, but not available in this version:
 
-- More mixing tools: setting and deleting hot cues, crossfader, loops, quantize, editing
+- Saving cues and beatgrids edited in Krate to Rekordbox; renaming cues
+- More mixing tools: crossfader, loops, quantize, editing
   beatgrids (in progress)
 - Filter and effects; keyboard shortcuts; DJ controller support; a
   headphone (cue) output
