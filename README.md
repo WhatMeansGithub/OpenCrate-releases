@@ -390,13 +390,17 @@ Settings are grouped in a sidebar:
 - **Appearance → Deck waveforms:** **Blue** (one colour), **Tri-band**
   (bass, mids and highs layered in blue, orange and white) or **RGB**
   (red = bass, green = mids, blue = highs).
+- **Appearance → Track list size:** a slider from smaller (more tracks on
+  screen) to larger, with a preview; the list follows as you drag.
+  **Reset** goes back to the standard size.
 - **Appearance → Album art:** show or hide covers in the track list and on
   the decks.
 - **Player & mixer:**
   - **When Krate starts:** **Start maximized**, **Start minimized** or
     **Remember the last state** (open or minimized, as you left it). Also
-    **Minimize on other screens**: collapses the player while Sync, Tidy,
-    Backups or Settings is open and opens it again in the library.
+    **Minimize on other screens** (on unless you turn it off): collapses the
+    player while Sync, Tidy, Backups or Settings is open and opens it again
+    in the library.
   - **EQ controls:** **Knobs** or **Kill buttons**.
   - **Mixer EQ:** the mixer whose EQ the decks copy, so a mix you prepare
     sounds close to how it will in the booth: Pioneer DJM-900NXS2, DJM-A9,
@@ -405,6 +409,12 @@ Settings are grouped in a sidebar:
     figures come from. Pioneer doesn't publish the exact curves of the
     DJM-900NXS2 and DJM-A9, so those two are approximations. Switching puts
     the EQ knobs back in the centre.
+- **Audio → Output device:** where the decks play: **System default**
+  (your computer's sound setting) or a specific device such as headphones,
+  an audio interface or a DJ controller. Switching pauses anything playing;
+  loaded tracks stay where they were, with their tempo, EQ and sync. If the
+  chosen device is unplugged, Krate uses the system default until it's
+  back. **Refresh list** looks for newly connected devices.
 - **Tidy & backups:**
   - **Where Tidy writes its changes:** write into Rekordbox's library, and
     keep Engine DJ's library in step (both on by default). The same switches
@@ -461,6 +471,11 @@ Tell us what you did, what you expected and what happened, and include a
 screenshot if you can. If a library looks wrong after a change, close the
 DJ app and restore the backup from **Backups → Libraries** (or undo the
 change in **Backups → Tag changes**) before doing anything else.
+
+If Krate shows **Please update Krate** when it starts, your Krate library
+was last opened by a newer version. Click **Get the latest version** and
+install it; nothing has been lost or changed. (Versions before 0.1.3 quit
+straight away in this case instead of showing the message.)
 
 ---
 
