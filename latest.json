@@ -1,19 +1,19 @@
 {
-  "version": "0.1.3",
-  "notes": "Release notes: https://github.com/WhatMeansGithub/krate-releases/releases/tag/v0.1.3-alpha",
-  "pub_date": "2026-10-19T01:28:40Z",
+  "version": "0.1.4",
+  "notes": "\n### Library\n- Resize columns by dragging the edge of their header, and move them by\n  dragging the header. Right-click the headers for **Reset columns**.\n- Column dividers in the header are easier to see.\n- The sidebar can be made wider or narrower by dragging its edge, or hidden\n  with **‹** (bring it back with the thin **›** strip).\n- A playlist's track count now sits in front of its name, leaving more room\n  for long names.\n\n### Player\n- The tempo fader looks and works like a deck's: a scale, a fader cap, a\n  click into place at 0 % and a green light when it's there.\n- The pitch bend buttons are labelled **SLOW** and **FAST**.\n- Play starts instantly: ▶ and the hot cues react when pressed (not on\n  release), and Master Tempo no longer adds a short silence at the start.\n\n### Updates\n- **What's new:** the update banner shows what changed before you install,\n  and Krate shows it once after updating (also in Settings → About).\n\n### Fixes\n- **Minimize on other screens** is now on for everyone who hadn't chosen\n  otherwise, as intended in 0.1.3.\n\n\nFull release notes: https://github.com/WhatMeansGithub/krate-releases/releases/tag/v0.1.4-alpha\n",
+  "pub_date": "2026-10-19T02:12:28Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.3-alpha/Krate_aarch64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXZndnJSa3dMMnA5V08rY1B6dWwzc0NQaWR2OVBNRmZTUW1MMThVR3pCT2ptUnhEeTh0dW40TkRHa2NuN0tHOVN6VVBXVmZlYThHUGJXd0FCSC9nRHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzcyMDcwCWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4zCkFpWTlZQUZiQUtMWnBybzkzanV4V3B5UGpHL0hIMGJXNHJoSit1UStISmJWV0VPM3N1eWRVb3pkTXdHTnV5MDJNWXNCRmFuZHpLKzlHMDcwazdEdUN3PT0K"
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.4-alpha/Krate_aarch64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWW9qRFM1SjMrVlpiV1BHbTd2bk50bUQrdGs3bEVlemZIUUhnV3I3SVRVVmpmc1RXMU5lOXZnOG5mWjByUDFrNzRvbU5jYnhqUzluZ2pkQ1hNWlVQaEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzc0NzEwCWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS40Ck9XeUxHODY1YXBqb1hMZEFiVVVKb1ZQMDRBcm0vTWVDMU9aNktmVE0yMjRDMGp6M0xNdU8vaUFBaktmMUhYUWhabGt5LzFGdjBsL25KVi83OVNBOERRPT0K"
     },
     "darwin-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.3-alpha/Krate_x64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXB2a2JhSURjNUxUTXVHUmNrdXl6YUQyb0lIQmlUbktDT3E0L2dpSWlBa08vaGVGZE04MlpvRUhqMHJZenBmVTJhYTZMT1JBZ0tBMnYzY2x4NEVFUXdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzcyMDg3CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4zCko2VnMzZW9ZOWJPTkFRTnM4VGwyT01KNlVRSnpYbUVBUjhGYWhQd25MY0FkcVpodlRuMitUSDNJWnpRa1FwR0JEMTJ2b2p4bmxPZjE1ZURaczM4VkN3PT0K"
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.4-alpha/Krate_x64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXFKOUxEeCtZdzFRMWhiY1JPQkFUeGY4eUVNZFlnZkpIWHRBUGxhU08xbU9FMDB6TnE1SEVYQkJMSENnSXZKRW9KMk9kZ3pEUHVaanVDS21YcHY4eUFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzc0NzIyCWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS40CmJJNk5hd3U4S2hXdHp5YWtRbFMrR3U5YTJ3MkFSL2xkNUkzd1R6YVkyMU9uUGNhZFFhWDVKTEJWVHN2RGxEb3NkUU52UXMrVWNmaXlxUytiUTQ2SEJ3PT0K"
     },
     "windows-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.3-alpha/Krate_0.1.3_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWW9OK0VDSzBZKzIyOWQrckZaZEx5K3pBb0VjbkdkUk1IYTV2SHpsWHBYQ2pKZHZrdHpjdlQySDdrNVhFOWEyM3N3S1RnQjd1enJwMlZRZXljSTUvaFFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzczMDQ0CWZpbGU6S3JhdGVfMC4xLjNfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuMS4zCm0zK0dHQW9FVU8rTFUyTWdHWXdsLzU4U1VLMENWMzRsMHI3c2V4dGtrVlNUQ3d5STVVVS9mL1VPSklrYzNTaERYQXdtQ1dVWmlBQ1EyUERKU2V0MUNBPT0K"
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.4-alpha/Krate_0.1.4_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXE4QlJoeUFnemVXb2U2MmFOYTIrTk1VMGE0SWxjN1MzM3lTbkpsOFZzNGZvempOYVhPTE5RdmFkRkVwdkdBeExybEhFcnFEZ2hIYW54cVMrYnBVTXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyMzc1NjgyCWZpbGU6S3JhdGVfMC4xLjRfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuMS40CnRhN1JmamNyZkp1Z2xwblJKdnhkbUMrVjlVMDdsbVpEUmFOZnYybmxoaTk2OUFVc1lOQ05kMFlrUk9YN0ZZdldSTmIvQ0RkQWZkYnNpV3lYams2bkN3PT0K"
     }
   }
 }

@@ -56,7 +56,10 @@ These builds aren't signed yet, so the first launch needs one extra step:
 
 Krate updates itself. When a new version is out, a blue banner at the top
 offers it: **Download update**, then **Restart and update**. Or choose
-**Skip this version** or **Later**. Updates are signed, and Krate only
+**Skip this version** or **Later**. **What's new?** in the banner shows
+what changed in that version before you install it, and after updating
+Krate shows it once more (any time later: Settings → About → **What's new
+in this version**). Updates are signed, and Krate only
 installs updates that come from Krate's own releases. Krate never restarts
 by itself, and you can't restart while it's writing to a library. How Krate
 handles updates is set in [Settings](#settings).
@@ -108,10 +111,17 @@ Tidy or restore), it re-reads any library that changed.
 ## Library: browsing your tracks
 
 - The **sidebar** lists your imported libraries and their playlists and
-  folders. Click a playlist to show its tracks; click the library name for
-  all tracks.
+  folders. The small number in front of a playlist is how many tracks it
+  has. Click a playlist to show its tracks; click the library name for all
+  tracks.
 - The **search** box filters by title, artist, album, genre, label and comment.
-- Click a **column header** to sort.
+- Click a **column header** to sort. Drag a header to move its column,
+  and drag a header's right edge to make the column wider or narrower
+  (double-click the edge for the standard width). Right-click the headers
+  and choose **Reset columns** to go back to the standard layout.
+- Drag the **sidebar's right edge** to make it wider or narrower; drag it
+  far to the left, or click **‹** next to "Libraries", to hide it. Click
+  the thin strip with **›** to bring it back. Krate remembers the layout.
 - A faint **waveform** behind each title shows the track's shape at a
   glance (from Rekordbox's or Engine DJ's own analysis; tracks that haven't
   been analysed show none).
@@ -181,11 +191,14 @@ On a deck:
 
 Below that, the beatmatching tools:
 
-- **◀ ▶ (nudge):** hold to slow the deck down or speed it up by 4 %, to
-  push it into time with the other deck.
-- **Tempo:** the tempo fader, in percent; double-click it to go back to
-  0 %. **±8** next to it switches the range (±8, ±16, ±50 %). The BPM in
-  the deck's top row shows the tempo it plays at now.
+- **SLOW / FAST (pitch bend):** hold to slow the deck down or speed it up
+  by 4 %, to push it into time with the other deck.
+- **Tempo fader:** drag the fader cap (or anywhere along the fader; hold
+  Shift for fine steps), scroll, or use the arrow keys. It clicks into
+  place at 0 %, where the green light above the middle comes on;
+  double-click to go back to 0 %. The percentage shows underneath.
+  **±8%** next to it switches the range (±8, ±16, ±50 %). The BPM in the
+  deck's top row shows the tempo it plays at now.
 - **MT (Master Tempo):** keylock. With it on, changing the tempo keeps the
   key; with it off, the key rises and falls with the tempo like a record.
 - **Key:** the key the track sounds in now. **−** and **+** shift it by a
