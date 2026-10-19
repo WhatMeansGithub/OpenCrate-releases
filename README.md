@@ -112,6 +112,111 @@ Tidy or restore), it re-reads any library that changed.
   all tracks.
 - The **search** box filters by title, artist, album, genre, label and comment.
 - Click a **column header** to sort.
+- A faint **waveform** behind each title shows the track's shape at a
+  glance (from Rekordbox's or Engine DJ's own analysis; tracks that haven't
+  been analysed show none).
+- **Album art** has its own column at the left: the cover embedded in the
+  audio file, read when the row comes into view (tracks without one show an
+  empty square). Decks show the cover next to the track title; hover over
+  it to see it bigger. Settings → Appearance → **Show album art** turns
+  covers off everywhere.
+
+### Playing tracks
+
+Load a track into a deck at the bottom of the window by:
+
+- **dragging** it from the track list onto a deck (its waveform or its
+  controls),
+- **right-clicking** it and choosing **Load to Deck A** or **Load to
+  Deck B** (Deck B switches the player to two decks), or
+- **double-clicking** it (deck A, or deck B while A is playing).
+
+If the deck is playing, Krate asks before replacing its track. Playback
+keeps going while you switch tabs.
+
+Click **Player** (top left of the player area) to minimize it to one line,
+and again to open it. Minimized, each loaded deck shows ▶ / ❚❚, its title,
+the time and a thin overview of the track (click to jump; you can drop
+tracks on it too); with nothing loaded the line stays empty. Settings →
+Player & mixer chooses how the player starts and whether it minimizes on
+other screens.
+
+Choose the player at the top right of the player area:
+
+- **1 deck:** the big waveform with the deck's controls below.
+- **2 decks:** both decks' waveforms stacked on top of each other (A above
+  B, like Rekordbox), with the two decks' controls side by side below.
+  **Load selected** loads the track selected in the list into that deck.
+
+On a deck:
+
+- **Waveform:** scrolls past the white playhead in the middle. Bar lines
+  are bright, beats are short ticks. Hot cues show as coloured flags with
+  their letter, memory cues as red triangles at the bottom, saved loops as
+  shaded areas, the cue point as an orange triangle. The zoom control in
+  its top right corner shows how many seconds are on screen; the
+  magnifier with **+** zooms in, the one with **−** zooms out.
+- **Scratching:** hold the waveform and drag. The track follows your hand
+  like a record, forwards and backwards; let go and it plays on (if it was
+  playing). A click without dragging jumps to that spot.
+- **Overview:** the whole track below; click to jump.
+- **CUE** works like on a CDJ: while playing, it jumps back to the cue
+  point and stops. Stopped at the cue point, **hold** CUE to play from it;
+  release to jump back. Press ▶ while holding CUE to keep playing. Stopped
+  anywhere else, CUE sets the cue point there. A loaded track starts at its
+  first memory cue; if it has none, where the sound starts (snapped to the
+  nearest beat), like Rekordbox's auto cue.
+- **▶ / ❚❚:** play and pause.
+- **Hot cues A–H:** the thin bars at the top of each deck's controls. A
+  bar lights in the cue's colour (with its name, if it has one) when the
+  track has that hot cue; click it to jump there and play.
+- **Volume:** the deck's volume, in percent.
+- **EQ:** the bands of the mixer chosen in Settings →
+  Player & mixer, highs on the left. As knobs: drag up or down (hold Shift
+  for fine steps), or scroll; double-click puts a knob back in the centre.
+  As kill buttons: a lit button cuts its band. Bands that fully kill on the
+  real mixer go silent when turned all the way left; the others stop at the
+  mixer's cut (for example −26 dB on Pioneer mixers). The ring lights blue
+  while a band is cut and red while it's boosted.
+
+Below that, the beatmatching tools:
+
+- **◀ ▶ (nudge):** hold to slow the deck down or speed it up by 4 %, to
+  push it into time with the other deck.
+- **Tempo:** the tempo fader, in percent; double-click it to go back to
+  0 %. **±8** next to it switches the range (±8, ±16, ±50 %). The BPM in
+  the deck's top row shows the tempo it plays at now.
+- **MT (Master Tempo):** keylock. With it on, changing the tempo keeps the
+  key; with it off, the key rises and falls with the tempo like a record.
+- **Key:** the key the track sounds in now. **−** and **+** shift it by a
+  semitone; click the shifted key to reset it. Krate shows keys the way
+  your library writes them (Am, 8A or 1m).
+
+With 2 decks you also get:
+
+- **SYNC:** match the master deck's tempo and lock onto its beats. The
+  deck jumps onto the master's beat when it starts (or when you press SYNC
+  while both play) and then stays locked. Its tempo fader follows the
+  master. Nudging a synced deck moves it off the beat; sync keeps the
+  offset you chose, useful when a beatgrid is slightly off. Tracks at half
+  or double the tempo (70 against 140 BPM) sync too.
+- **MASTER:** the deck that synced decks follow (lit orange). The first
+  deck you load becomes the master; pressing SYNC with no master makes the
+  other deck the master.
+- **Phase meter** (the small bar next to MASTER): where this deck's beat
+  falls against the master's. The dot sits in the middle (and turns green)
+  when the beats line up; left means behind, right means ahead. It works
+  without SYNC too, for beatmatching by hand.
+- **KEY SYNC:** shifts the deck's key to fit the master's, either the same
+  key or its relative major/minor (the same Camelot number), by the
+  smallest step. It turns Master Tempo on.
+
+Sync and the phase meter need a beatgrid on both tracks. In 2 decks, the
+waveforms scroll at real time: two decks at the same BPM show their beats
+the same distance apart, so you can see whether they line up.
+
+Cue points and beatgrids come from the library the track belongs to, and
+line up with the audio for both Rekordbox and Engine DJ libraries.
 
 ---
 
@@ -271,21 +376,44 @@ values back in Rekordbox and Engine DJ.
 
 ## Settings
 
-- **Updates:**
+Settings are grouped in a sidebar:
+
+- **General → Updates:**
   - **Install updates automatically:** downloads new versions in the
     background and installs them when you quit Krate.
   - **Tell me about updates** (default): shows a banner; you decide when.
   - **Don't check for updates.**
   - **Check now** looks right away. If you skipped a version, **Offer it
     again** brings it back.
-- **Theme:** Dark, Light, Gray, High contrast or Classic Winamp.
-- **Before changing audio files, back up…**
-  - **Tags and artwork only** (recommended): small backups, and undo still
-    restores the exact original file.
-  - **The entire file:** a full copy of every file before it's changed.
-- **Where Tidy writes its changes:** write into Rekordbox's library, and
-  keep Engine DJ's library in step (both on by default). The same switches
-  are on the Tidy screen.
+- **Appearance → Theme:** Dark, Light, Gray, High contrast or Classic
+  Winamp.
+- **Appearance → Deck waveforms:** **Blue** (one colour), **Tri-band**
+  (bass, mids and highs layered in blue, orange and white) or **RGB**
+  (red = bass, green = mids, blue = highs).
+- **Appearance → Album art:** show or hide covers in the track list and on
+  the decks.
+- **Player & mixer:**
+  - **When Krate starts:** **Start maximized**, **Start minimized** or
+    **Remember the last state** (open or minimized, as you left it). Also
+    **Minimize on other screens**: collapses the player while Sync, Tidy,
+    Backups or Settings is open and opens it again in the library.
+  - **EQ controls:** **Knobs** or **Kill buttons**.
+  - **Mixer EQ:** the mixer whose EQ the decks copy, so a mix you prepare
+    sounds close to how it will in the booth: Pioneer DJM-900NXS2, DJM-A9,
+    DJM-V10 (4 bands), AlphaTheta Euphonia (its 3-band isolator),
+    Allen & Heath Xone:92 and Xone:96 (4 bands). Each one lists where its
+    figures come from. Pioneer doesn't publish the exact curves of the
+    DJM-900NXS2 and DJM-A9, so those two are approximations. Switching puts
+    the EQ knobs back in the centre.
+- **Tidy & backups:**
+  - **Where Tidy writes its changes:** write into Rekordbox's library, and
+    keep Engine DJ's library in step (both on by default). The same switches
+    are on the Tidy screen.
+  - **Before changing audio files, back up…** **Tags and artwork only**
+    (recommended: small backups, and undo still restores the exact original
+    file) or **The entire file** (a full copy of every file before it's
+    changed).
+- **About:** Krate's version and licence.
 
 ---
 
@@ -309,7 +437,10 @@ Hover over a badge for details.
 
 Planned, but not available in this version:
 
-- Playing tracks and showing waveforms
+- More mixing tools: setting and deleting hot cues, crossfader, loops, quantize, editing
+  beatgrids (in progress)
+- Filter and effects; keyboard shortcuts; DJ controller support; a
+  headphone (cue) output
 - Editing playlists inside Krate
 - Syncing from Engine DJ to Rekordbox
 - Syncing straight onto an Engine DJ USB stick (copying the music too)
