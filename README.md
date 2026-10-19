@@ -166,10 +166,13 @@ other screens.
 
 Choose the player at the top right of the player area:
 
-- **1 deck:** the big waveform with the deck's controls below.
+- **1 deck:** the big waveform with all of the deck's controls in one row
+  below (it wraps onto a second row in a narrow window).
 - **2 decks:** both decks' waveforms stacked on top of each other (A above
   B, like Rekordbox), with the two decks' controls side by side below.
   **Load selected** loads the track selected in the list into that deck.
+  Switching back to 1 deck while deck B plays asks first, then stops
+  deck B.
 
 On a deck:
 
@@ -194,15 +197,34 @@ On a deck:
   bar lights in the cue's colour (with its name, if it has one) when the
   track has that hot cue; click it to jump there and play. Click an empty
   bar to set that hot cue where the deck is. Right-click a hot cue to delete
-  it, move it to where the deck is, or change its colour.
+  it, move it to where the deck is, change its colour, or name it.
 - **◁ MEMORY ▷:** **MEMORY** stores a memory cue where the deck is (when
   stopped, that spot also becomes the cue point). If there's already a
   memory cue there, it goes to it instead of adding a second one. ◁ and ▷
   jump to the previous or next memory cue and make it the cue point.
   Parked on a memory cue, the button reads **DELETE** and removes it.
-- **Q (quantize):** new hot cues and memory cues snap to the nearest beat,
-  and jumping to a hot cue while playing keeps the beat (it lands as far
-  past the cue as the deck was past its beat). Krate remembers the setting.
+- **Loops (IN · OUT · RELOOP · ½ · 4 · ×2):** **IN** marks where a loop
+  starts, **OUT** loops from there to where the deck is now (while looping,
+  OUT moves the loop's end). **EXIT** leaves a playing loop and plays on;
+  **RELOOP** goes back to its start and loops again. The number is the auto
+  loop: click it to loop that many beats from here (click again to leave
+  the loop); **½** and **×2** halve or double the playing loop, or pick a
+  smaller or bigger auto loop (1/4 to 32 beats). The loop shows as a green
+  area on the waveform and the overview (grey once you've left it). Loops
+  stay seamless with Master Tempo on. Jumping somewhere outside the loop
+  leaves it.
+- **Q (quantize):** new hot cues, memory cues and loop points snap to the
+  nearest beat, and jumping to a hot cue while playing keeps the beat (it
+  lands as far past the cue as the deck was past its beat). Krate
+  remembers the setting.
+- **CUES:** the track's cues and saved loops in time order (the number is
+  how many it has): hot cues A–H, memory cues (**MEM**) and loops with
+  their length. Click one to go there (stopped, it becomes the cue point; a
+  loop starts looping). Type in the name field to name it (Enter saves,
+  Esc cancels), click the colour square to change the colour, × deletes
+  it. **Save loop** keeps the deck's current loop with the track. Loops
+  from Rekordbox show the hot cue pad they sit on (**A ⟳**), Engine's their
+  loop pad (**L1**–**L8**). **Done** closes the list.
 - **GRID:** beatgrid tools, shown instead of the mixing tools: **‹ ›** move
   the grid 1 ms earlier or later (**« »** 10 ms), **Beat 1 here** makes the
   playhead the first beat of a bar, and the tempo box sets the grid's BPM
@@ -210,9 +232,10 @@ On a deck:
   Changing the tempo makes the grid steady, keeping the beat nearest the
   playhead in place. Sync and the phase meter follow the edited grid.
   **Done** goes back to the mixing tools.
-- **EDITED:** appears when a track's cues or grid were changed in Krate.
-  Edits are saved in Krate (for that audio file, in every library). Click
-  EDITED to go back to the library's own cues or grid, or choose **Save
+- **EDITED:** appears when a track's cues, loops or grid were changed in
+  Krate. Edits are saved in Krate (for that audio file, in every library).
+  Click EDITED to go back to the library's own cues, loops or grid, or
+  choose **Save
   edits to Engine DJ / Rekordbox…** to open Sync → Cue & grid edits (see
   [Saving cue and grid edits](#saving-cue-and-grid-edits)).
 - **Volume:** the deck's volume, in percent.
@@ -250,7 +273,9 @@ With 2 decks you also get:
   or double the tempo (70 against 140 BPM) sync too.
 - **MASTER:** the deck that synced decks follow (lit orange). The first
   deck you load becomes the master; pressing SYNC with no master makes the
-  other deck the master.
+  other deck the master. Loading a new track into the master deck passes
+  the master to the other deck (if it's synced or playing), so that deck
+  keeps its tempo, as on CDJs.
 - **Phase meter** (the small bar next to MASTER): where this deck's beat
   falls against the master's. The dot sits in the middle (and turns green)
   when the beats line up; left means behind, right means ahead. It works
@@ -306,7 +331,8 @@ difference Rekordbox and Engine DJ have with some MP3 files.
 
 ### Saving cue and grid edits
 
-Hot cues, memory cues and beatgrids you change in Krate's player stay in
+Hot cues, memory cues, saved loops and beatgrids you change in Krate's
+player stay in
 Krate until you save them into your DJ library. Open **Sync → Cue & grid
 edits** (the number shows how many tracks you've edited), or click
 **EDITED** on a deck and choose **Save edits to Engine DJ / Rekordbox…**.
@@ -325,13 +351,19 @@ edits** (the number shows how many tracks you've edited), or click
 
 **Engine DJ:** Krate's hot cues replace Engine's for those tracks, and the
 beatgrid replaces Engine's. Memory cues stay in Krate (Engine DJ has
-none) and loops aren't touched.
+none). Loops saved in Krate replace Engine's, on its 8 loop pads (a loop
+keeps its pad, the others fill free pads in time order); if you didn't
+change a track's loops, Engine's stay.
 
 **Rekordbox:** Krate's hot cues and memory cues replace Rekordbox's for
-those tracks. Loops aren't touched, except a hot loop in a slot that now
-holds a Krate hot cue. Beatgrids aren't saved to Rekordbox yet (they live
-in Rekordbox's analysis files; that comes later). Cue colours Krate can
-match exactly are kept; others get Rekordbox's default green for now. If
+those tracks. Loops saved in Krate replace Rekordbox's: a hot loop keeps
+its pad unless a hot cue now sits there, other loops become memory loops.
+If you didn't change a track's loops, Rekordbox's stay, except a hot loop
+on a pad that now holds a Krate hot cue. The beatgrid replaces
+Rekordbox's, in the track's analysis files, the same way Rekordbox saves
+a grid you move yourself; those files are backed up with the library and
+restored with it. A track Rekordbox hasn't analysed yet can't take a grid
+(the list says so). Cue colours Krate can match exactly are kept; others get Rekordbox's default green for now. If
 your library uses Cloud Library Sync, Krate says so: Rekordbox then sends
 the saved cues to your other computers when it next syncs.
 
@@ -482,8 +514,23 @@ Settings are grouped in a sidebar:
   screen) to larger, with a preview; the list follows as you drag.
   **Reset** goes back to the standard size.
 - **Appearance → Album art:** show or hide covers in the track list and on
-  the decks.
+  the decks. Krate keeps small copies of the covers (in your computer's
+  cache folder), so they appear right away instead of being read from the
+  audio files each time; a changed cover is picked up automatically. The
+  section shows how many are cached and how much space they use. **Clear
+  all** empties the cache; **Choose playlists…** clears only the covers of
+  the playlists you tick (ticking a folder includes everything inside).
+  Each playlist and folder shows how much space its covers take, and the
+  button shows what clearing the ticked ones frees (tracks in several
+  playlists count once).
+  Cleared covers are read from the files again as they come into view.
 - **Player & mixer:**
+  - **Waveform frame rate:** the waveforms move as smoothly as your screen
+    allows (up to 120 Hz on ProMotion MacBooks). **Always** caps it at 120
+    or 60 fps; **On battery** sets a separate cap while unplugged (60 fps
+    unless you change it). Lower caps use less power. **Show the frame
+    rate** shows the screen's rate and the frames drawn per second on deck
+    A's waveform.
   - **Deck waveforms:** **Blue** (one colour), **Tri-band** (bass, mids
     and highs layered in blue, orange and white) or **RGB** (red = bass,
     green = mids, blue = highs).
@@ -518,6 +565,18 @@ Settings are grouped in a sidebar:
 
 ---
 
+## Battery
+
+On a laptop, the top right corner of the window shows the battery: its
+charge, with a green bolt beside it while charging, or a plug while on the
+power adapter but not charging. Next to it is the time: how long the
+battery lasts on battery, how long until full while charging, or **Fully
+charged**. **Charging on hold** means macOS is keeping the battery below
+full to protect it. It updates within a couple of seconds of plugging in or
+out. Computers without a battery don't show it.
+
+---
+
 ## The status bar
 
 The bar at the bottom shows what Krate is doing (importing, scanning,
@@ -538,9 +597,7 @@ Hover over a badge for details.
 
 Planned, but not available in this version:
 
-- Saving cues and beatgrids edited in Krate to Rekordbox; renaming cues
-- More mixing tools: crossfader, loops, quantize, editing
-  beatgrids (in progress)
+- More mixing tools: crossfader, beat jump
 - Filter and effects; keyboard shortcuts; DJ controller support; a
   headphone (cue) output
 - Editing playlists inside Krate
