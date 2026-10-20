@@ -129,6 +129,26 @@ that in Settings → General.
   headers** to show or hide columns (a ✓ marks the ones shown; Title is
   always shown), or choose **Reset columns** to go back to the standard
   layout.
+- **Rating:** click a star to rate a track (click the same star again to
+  clear it), or select a track and press **1**–**5** (**0** clears). The
+  rating is saved into the library you're viewing (backed up first;
+  ratings you set quickly one after another are saved together), and
+  that app must be closed. Your other libraries get it when you sync, or
+  straight away if the library you're viewing is the **primary library**
+  (Settings → Sync).
+- **Playlists** (Rekordbox's own library and Engine DJ): hover over a
+  library, folder or playlist in the sidebar and click **+** for **New
+  playlist…** or **New folder…** (in a library or folder it goes inside;
+  next to a playlist it goes right below it, in Rekordbox; Engine DJ adds
+  it at the end). Right-click a playlist or folder to **Rename…** or
+  **Delete…** it (its tracks stay in the collection). Drag tracks from the
+  list onto a playlist to add them; inside a playlist, right-click a track
+  for **Remove from playlist**. **Drag to reorganise:** drag a playlist
+  or folder onto a playlist to put it right below, onto a folder to put
+  it inside, or onto the library name to put it at the top; inside a
+  playlist sorted by **#**, drag a track up or down to move it (drop it in the empty space below the list to move it to the end). Changes are saved into that library
+  (backed up first; the app must be closed), and into your other
+  libraries too if it's the primary library (Settings → Sync).
 - **Format** shows the file type (MP3, AIFF, WAV, FLAC, …). **Bitrate** and
   **Label** are hidden at first; turn them on with a right-click on the
   headers.
@@ -341,6 +361,14 @@ info, ratings, cues, loops and beatgrids), and applies it without asking:
   info, ratings, hot cues and beatgrids. Only the fields you changed are
   written; Rekordbox's memory cues stay. Rekordbox is backed up first and
   must be closed. Loops changed in Engine DJ stay there for now.
+- **Playlists** made or changed in **Engine DJ** (with Two-way): new
+  playlists and folders are created in Rekordbox with Engine DJ's tracks
+  in its order; tracks added or moved in Engine DJ are added or moved in
+  Rekordbox (tracks you removed in Engine DJ stay in Rekordbox); a
+  playlist renamed in Engine DJ is renamed in Rekordbox. Tracks that
+  aren't in Rekordbox's collection are left out. A playlist changed in
+  both apps keeps Rekordbox's version; one deleted in Engine DJ isn't
+  deleted in Rekordbox.
 - Changed in **both**: the newest change wins (each app records when it
   last edited a track). When an app doesn't say, or if you chose **Ask
   me** in Settings → Sync, the track is listed under **Changed in both
@@ -354,6 +382,14 @@ info, ratings, cues, loops and beatgrids), and applies it without asking:
 
 The first sync between two libraries works as before; remembering starts
 from there.
+
+**Undoing a sync.** **Recent syncs** (on the Sync screen before you
+preview) lists the last syncs and which libraries each one wrote.
+**Undo this sync** on the most recent one (also shown right after a sync)
+puts every library it wrote, Engine DJ and with two-way Rekordbox too,
+back exactly as it was before, and Krate's memory with it. The apps must
+be closed. Changes made in them since that sync are undone too; their
+current state is backed up first, so you can go back from Backups.
 
 ### Saving cue and grid edits
 
@@ -588,6 +624,19 @@ Settings are grouped in a sidebar:
   loaded tracks stay where they were, with their tempo, EQ and sync. If the
   chosen device is unplugged, Krate uses the system default until it's
   back. **Refresh list** looks for newly connected devices.
+- **Sync → Primary library:** **None** (default): edits you make in Krate,
+  such as ratings, go only into the library you're viewing, and the others
+  catch up when you sync. Pick a library to make its edits also go
+  straight into your other libraries (one whose app is open gets them with
+  the next sync).
+  - **Sync automatically when Rekordbox closes** (off by default; with
+    Rekordbox as the primary library): when you quit Rekordbox and its
+    library changed, Krate syncs it into Engine DJ in the background, like
+    the Sync button with Merge, one way (changes made in Engine DJ wait for
+    a manual sync). It's backed up and listed under Recent syncs, so it
+    can be undone. If Engine DJ is open, a track changed in both apps, more
+    than 200 tracks would change, or the two were never synced by hand,
+    Krate tells you to open Sync instead.
 - **Sync → When something changed in both libraries:** for track info,
   rating, cues, loops and beatgrid: **Newest change wins** (default: the
   app that edited the track last; asks when that's unknown), **Ask me**,
