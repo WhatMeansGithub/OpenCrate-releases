@@ -391,6 +391,29 @@ back exactly as it was before, and Krate's memory with it. The apps must
 be closed. Changes made in them since that sync are undone too; their
 current state is backed up first, so you can go back from Backups.
 
+### Exporting to a USB stick
+
+**Sync → USB stick** copies playlists from Rekordbox's library on this
+computer to a stick, with the music and Rekordbox's analysis (cues,
+loops, beatgrids, waveforms), in both of Rekordbox's stick formats: one
+for older players (CDJ-2000NXS2, XDJ-XZ, CDJ-3000 before firmware 3.30)
+and one for newer ones (CDJ-3000X, XDJ-AZ, OPUS-QUAD).
+
+1. Plug in the stick and choose it (**Refresh** if it doesn't show).
+2. Tick the playlists (a ticked folder takes all its playlists).
+3. **Preview export** shows how many playlists and tracks go on the stick,
+   and tracks left out (for example ones Rekordbox hasn't analysed).
+4. **Export now**. Eject the stick before unplugging it.
+
+The stick always gets your library as it is on this computer; Krate never
+changes your library from a stick. Playlists already on the stick that
+your library also has are exported again, so they stay; ones your library
+doesn't have leave the stick's list (the preview names them; their music
+stays on the stick). The stick's previous database is backed up first.
+Your players' settings on the stick are left alone. Exporting is never
+done automatically. For now it works from Rekordbox's own library (not
+Engine DJ or an XML export).
+
 ### Saving cue and grid edits
 
 Hot cues, memory cues, saved loops and beatgrids you change in Krate's

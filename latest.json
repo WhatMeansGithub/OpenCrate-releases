@@ -1,19 +1,11 @@
 {
-  "version": "0.1.9",
-  "notes": "\n### New\n- **Edit playlists in Krate:** create playlists and folders, rename and\n  delete them, drag tracks onto a playlist and remove them again, in\n  Rekordbox's library or Engine DJ (hover for **+**, or right-click in\n  the sidebar). Drag playlists and folders to reorganise them, and drag\n  tracks to reorder a playlist.\n- **Playlists in two-way sync:** playlists you make, fill, reorder or\n  rename in Engine DJ now come back to Rekordbox when you sync.\n- **Star ratings:** click the stars in the track list, or press 1–5 on the\n  selected track. A rating is saved into the library you're viewing\n  (backed up first); the others get it when you sync.\n- **Primary library** (Settings → Sync): edits made in Krate in that\n  library also go straight into your other libraries. With Rekordbox as\n  the primary library you can also turn on **Sync automatically when\n  Rekordbox closes**: Krate then keeps Engine DJ up to date by itself.\n- **Undo a whole sync.** Sync → Recent syncs lists your last syncs;\n  **Undo this sync** puts every library the most recent one wrote (Engine\n  DJ, and Rekordbox with two-way) back as it was, in one step.\n\n### Fixes\n- Changes made in Rekordbox or Engine DJ while Krate is open now show up\n  as soon as the app is closed, and re-importing a library always\n  refreshes the list.\n\n",
-  "pub_date": "2026-10-20T22:34:52Z",
+  "version": "0.1.10",
+  "notes": "\n### New\n- **Export to a USB stick** (Sync → USB stick): playlists from Rekordbox's\n  library go onto a stick with their music, cues, loops and grids, for\n  older and newer Pioneer players alike. Playlists already on the stick\n  stay, and its previous database is backed up first.\n\n### Fixes\n- Krate opens nearly full screen the first time, and after that at the\n  size and place you left it (maximized, too).\n- \"Updating libraries…\" no longer squeezes in next to the import buttons;\n  what Krate is doing shows in the status bar only.\n\n",
+  "pub_date": "2026-10-20T23:54:16Z",
   "platforms": {
-    "darwin-aarch64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.9-alpha/Krate_aarch64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWttREMvK1N1UEVOR2dia3NCTXMvcjN3aFlYK2pCNEUvOExmMTdTOVFRZDJoYTFyQU1hem5TdGVIOXp2MUhHYVloeHJaemthcjM4YjVZejJuaU90TEFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTM1NjgzCWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS45Cms5SkNua3VDSFB1aXRCR0UwVHBtQ3lkdU4zdkUrREo4cy9BVjQ5RmFKUzNaY1VPd2svd3pVSGdMU1J2b3l5TkxaQjRsMDFBbStrZGd3QzVZSCtNQURRPT0K"
-    },
     "darwin-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.9-alpha/Krate_x64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXJibGJadUpjMDkxdGh6bkIxR2RDQTNYSVh5Nk9GekcvUDMwVjJBbGFjVWpidUZERDZ4eFVIMDlKblB1cFh5bXFiM0tQblVpQldXT0x5czVTaVJjMkFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTM1NzE1CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS45CmgxOERGTGFrSWlKcDU1YjhhcE5xQzdpS29MMWRFbE9DRkJvVFlHbllmb0xrcVpNUHR2V0pqMHRUWDdrVVBKcDI5cnlVWGNEVkJUTlQ4MUowR1NhYkFRPT0K"
-    },
-    "windows-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.9-alpha/Krate_0.1.9_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWlOTlJRczRHTExWY1NyazhaTFQyWXZrVzJuWWN2aXMxUDJXQ0ozTkNkcE42OTlISS9sTHVDdjhjT1ZudkEyOHJZSFRzQjBzdzI1NW55SEVYdXYyWHdJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTM2NjU5CWZpbGU6S3JhdGVfMC4xLjlfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuMS45CmpOLzIwMjNBZGFUWmtmVEhiRjYyLzBiMWhTT01XSXNMeGZtcVo3QlY5UmMrL2t0NVlraUd4NFJVYUVRc0tEL1pWMHp6Z01mSTAwa0RMdmJvUURtU0NRPT0K"
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.10-alpha/Krate_x64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWsxaGFwa0JHZE9tVDlsY3VzSy9FMDV6d1NYMnp0QlVBNFFGaUI4VjRDWGhqc3RjSklFUWswT2JHbmxzSFJ5MHlpQjhhRDBHRXdjSjNOOHhkczFMTlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTQwNDQ4CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4xMAp4VzhLMTdSVE5qRXVQbjBUbWJOYmVwQ2dNK0NwdHRMSzN1RGsyQ1NNRnlJVHNOdjUvSDBJMWtSUXMxR2VOTE9GVU1zRWUvVG9RSGV1R2RucG1zeXlEdz09Cg=="
     }
   }
 }
