@@ -329,6 +329,32 @@ below).
 Cue points line up exactly between the apps, including the small timing
 difference Rekordbox and Engine DJ have with some MP3 files.
 
+**Syncing again.** Krate remembers what both libraries held after each
+sync, so the next one knows what you changed where since then (track
+info, ratings, cues, loops and beatgrids), and applies it without asking:
+
+- Changed in **Rekordbox**: copied to Engine DJ, even in Merge mode (it's
+  an edit, not a gap to fill). The track list says what changed, e.g.
+  "info rating".
+- Changed in **Engine DJ**: with **Two-way** ticked (the default when
+  syncing from Rekordbox's library), copied back into Rekordbox: track
+  info, ratings, hot cues and beatgrids. Only the fields you changed are
+  written; Rekordbox's memory cues stay. Rekordbox is backed up first and
+  must be closed. Loops changed in Engine DJ stay there for now.
+- Changed in **both**: the newest change wins (each app records when it
+  last edited a track). When an app doesn't say, or if you chose **Ask
+  me** in Settings → Sync, the track is listed under **Changed in both
+  libraries**: pick **Copy Rekordbox's** or **Leave Engine DJ's**, and the
+  preview updates. Undecided ones aren't written and come up again next
+  time.
+- Cues or loops **removed** in one app stay in the other.
+- **Probably the same track, moved:** tracks that look like a moved copy
+  of one Krate knows (same size, length, artist and title). They're only
+  listed for now, not linked.
+
+The first sync between two libraries works as before; remembering starts
+from there.
+
 ### Saving cue and grid edits
 
 Hot cues, memory cues, saved loops and beatgrids you change in Krate's
@@ -363,7 +389,9 @@ on a pad that now holds a Krate hot cue. The beatgrid replaces
 Rekordbox's, in the track's analysis files, the same way Rekordbox saves
 a grid you move yourself; those files are backed up with the library and
 restored with it. A track Rekordbox hasn't analysed yet can't take a grid
-(the list says so). Cue colours Krate can match exactly are kept; others get Rekordbox's default green for now. If
+(the list says so). Rekordbox has a fixed set of cue colours: Krate's hot
+cue colours are all among them, and any other colour gets the nearest
+Rekordbox colour (the list says how many). If
 your library uses Cloud Library Sync, Krate says so: Rekordbox then sends
 the saved cues to your other computers when it next syncs.
 
@@ -408,7 +436,8 @@ A checklist of fixes that run together:
 | Remove web addresses | URLs, domains and e-mail addresses. For comments you choose: **clear the whole comment** (such comments are nearly always ads) or **remove only the address** |
 | Replace characters with spaces | e.g. `Artist_Name_Track` → `Artist Name Track`; pick which characters |
 | Remove track numbers from titles | `01 - Title` → `Title`; real titles like "5 Minutes Late" are left alone |
-| Split artist out of the title | for tracks with no artist: `Artist - Title` becomes artist + title |
+| Split artist out of the title | for tracks with no artist: `Artist - Title` becomes artist + title; for tracks with one, a title starting with that same artist loses it (`Cristina Lazic - Jumpin'` → `Jumpin'`) |
+| Remove the label from titles | `Jumpin' (Original Mix) - Bamboleo` → `Jumpin' (Original Mix)`, when the end matches the track's label or the label in its album (`Cabeza EP - Bamboleo Records`) |
 | Put mix names in parentheses | `Track - Original Mix` → `Track (Original Mix)` |
 | Fill in the remixer | from titles like `Track (Someone Remix)` |
 | Fix ALL CAPS / all lowercase | Title Case for titles, artists and albums written entirely in capitals or lowercase |
@@ -464,6 +493,12 @@ Nothing on the stick is changed, except junk you choose to delete.
    - the stick's **file system** (FAT32 and exFAT are safest; Krate warns
      about Mac-only or Windows-only formats),
    - what's on it (tracks in the Rekordbox export and Engine library),
+   - which **Rekordbox databases** it has. Rekordbox writes two: one for
+     newer players (CDJ-3000X, XDJ-AZ, OPUS-QUAD, OMNIS-DUO) and one for
+     older players (CDJ-2000NXS2, XDJ-XZ, CDJ-3000 before firmware 3.30).
+     If both are there but list different playlists or tracks, Krate says
+     which, because newer and older players would then show different
+     things. Exporting again from Rekordbox 7.2.11 or newer fixes it,
    - **junk files**: macOS `._` files and `.DS_Store` files, and a leftover
      Rekordbox export lock,
    - **track problems**, with each track's position in the export
@@ -553,6 +588,11 @@ Settings are grouped in a sidebar:
   loaded tracks stay where they were, with their tempo, EQ and sync. If the
   chosen device is unplugged, Krate uses the system default until it's
   back. **Refresh list** looks for newly connected devices.
+- **Sync → When something changed in both libraries:** for track info,
+  rating, cues, loops and beatgrid: **Newest change wins** (default: the
+  app that edited the track last; asks when that's unknown), **Ask me**,
+  **The library I sync from wins**, **The library I sync into wins**, or
+  for cues and loops **Keep both** (the other's go into free slots).
 - **Tidy & backups:**
   - **Where Tidy writes its changes:** write into Rekordbox's library, and
     keep Engine DJ's library in step (both on by default). The same switches

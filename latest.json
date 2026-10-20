@@ -1,19 +1,11 @@
 {
-  "version": "0.1.7",
-  "notes": "\n### Behind the scenes\n- **Bug reports:** Krate keeps a log of what it did and of any errors.\n  Settings → About → **Copy log** copies it for a report.\n- **Modules:** Settings → Modules is where optional downloads (audio\n  analysis, file conversion and the like) will appear. Each is signed by\n  Krate and checked before it's installed. None are available yet.\n- Tighter security: the window only runs Krate's own code.\n\n### Player\n- The frame rate meter sits next to the 1 deck / 2 decks buttons and counts\n  both decks (it used to show only on deck A, so a playing deck B wasn't\n  measured).\n\n",
-  "pub_date": "2026-10-20T00:03:45Z",
+  "version": "0.1.8",
+  "notes": "\n### New\n- **Two-way sync.** Krate now remembers what Rekordbox and Engine DJ held\n  after your last sync, and the next sync applies what you changed in\n  either app since then: track info, ratings, cues and beatgrids go from\n  Rekordbox to Engine DJ and back (loops one way for now). When the same\n  track changed in both, the newest change wins; Settings → Sync can ask\n  you instead.\n- **Check USB stick** now also reads sticks that only have Rekordbox's\n  database for older players (CDJ-2000NXS2, XDJ-XZ, CDJ-3000 before\n  firmware 3.30), and warns when a stick's two Rekordbox databases list\n  different playlists, so newer and older players would show different\n  things.\n- **Tidy → Smart fixes:** \"Split artist out of the title\" also removes the\n  artist from titles that repeat it (\"Cristina Lazic - Jumpin'\" with\n  artist Cristina Lazic → \"Jumpin'\"). New fix **Remove the label from\n  titles**: \"Jumpin' (Original Mix) - Bamboleo\" → \"Jumpin' (Original\n  Mix)\" when the end is the track's label.\n\n### Fixes\n- Syncing into a brand-new Engine DJ library (one Engine has just\n  created, with no tracks yet) no longer stops with \"FOREIGN KEY\n  constraint failed\".\n- Hot cue colours saved to Rekordbox now arrive as the right colour, also\n  on USB sticks you export. Krate's hot cue colours are now exactly\n  Rekordbox's, and other colours get the nearest Rekordbox colour instead\n  of green. Krate also shows all of Rekordbox's cue colours.\n\n",
+  "pub_date": "2026-10-20T20:48:45Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.7-alpha/Krate_aarch64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXBQUTNVTE1wWGJHbmM1RmZGOVByb1d3ajE0WDhMMExiblFORVF2WTRtK0czVXlyUVFQc3E1dktWZXptemVzMzRMTWhPNElLbm9ORjlNU0hWbHJQM0FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDU0NjE3CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS43CnlzbVFkSWhqMC83RW5iNFM1d0NNM015enI1MWVOVFhmQnJkd2FFNEVtU2syVlZZL1k3QW1LbC9SaHVPeDN3ckhsclhaSTZTNWtMczZIMnRWRExOMUFBPT0K"
-    },
-    "windows-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.7-alpha/Krate_0.1.7_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWW50d1IvK3AveFhQajF5YUlTWmFOKzc1ME9GZHRkdUlQaVQxVXBYNXVvaElsRDl0RlhpaW01bGp0ODh1N2tsa0lZVHJLYnZTcktVYmRVaklmUWZNUHdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDU1NDM0CWZpbGU6S3JhdGVfMC4xLjdfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjAuMS43Cnd0R1BCT3BlemMzY1RaUTBYWHZpWmpPTU1DaFlYUVJUUnZzMXJrdWlrdmxLVzYwMllENWdmVnRocC91RVE3WDk5Q1NkdHl4bkM2cVo1ZDJxS3JPVUJBPT0K"
-    },
-    "darwin-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.7-alpha/Krate_x64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWlpQm9vRytLL3ZVcHlTV2d2ZTd6Uit2eDBmS2lrbkEzSkw1QmN5citHLzF1bzg3eTlBc2hLdzFWdm1DY0VEdTdXV3pYMmtXTDMzNFNQYjQ1bk9mTmdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNDU2MjM4CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS43CkN1SWZKb1ZzQ2k3amIyZkJpYmhkZVJLMlZINUdCeE5SempDMmhJVFVlMldJWnlOUWEyK3pkOGVoTVJOMFo0dFV1dkdHK3hidWFUQ1M3WFc0VHkwMEFnPT0K"
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.8-alpha/Krate_aarch64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWg0YUliOWZUU1h0QmRzWG4rYVIvUkpTbGxtTVgrYXRvamJxdWpmSnppNkhFNnFHSFlOc0ZWUmh6MmloUXZjbUlTTXI5TktMM1BmaCtPRzBOTjZJYkEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTI5MzE3CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS44ClQ5N0x0NllFam9BZmVaWVRJWWJKVXFFSGUrUGg4SCtYa1BXU1pIM1NKQkJyMVVjOWczV2Y0S2toWGxTUFFCbkZ2SXc4WTNrMjdEMDRTQWhNUWNoa0FnPT0K"
     }
   }
 }
