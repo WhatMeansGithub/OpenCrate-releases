@@ -529,8 +529,8 @@ Settings are grouped in a sidebar:
     allows (up to 120 Hz on ProMotion MacBooks). **Always** caps it at 120
     or 60 fps; **On battery** sets a separate cap while unplugged (60 fps
     unless you change it). Lower caps use less power. **Show the frame
-    rate** shows the screen's rate and the frames drawn per second on deck
-    A's waveform.
+    rate** shows the screen's rate and the waveform frames drawn per second
+    (whichever deck is playing) next to the 1 deck / 2 decks buttons.
   - **Deck waveforms:** **Blue** (one colour), **Tri-band** (bass, mids
     and highs layered in blue, orange and white) or **RGB** (red = bass,
     green = mids, blue = highs).
@@ -561,7 +561,15 @@ Settings are grouped in a sidebar:
     (recommended: small backups, and undo still restores the exact original
     file) or **The entire file** (a full copy of every file before it's
     changed).
-- **About:** Krate's version and licence.
+- **Modules:** optional parts Krate downloads only when you want them, so
+  the app itself stays small (audio analysis, file conversion and the
+  like, as they become available). Each shows its size with **Download**,
+  **Update** or **Remove**. Every module is signed by Krate and checked
+  before it's installed. A feature that needs a module offers the
+  download the first time you use it. There are no modules yet.
+- **About:** Krate's version and licence. **Copy log** copies Krate's log
+  (what it did and any errors) for a bug report; **Show log file** opens
+  its folder.
 
 ---
 
@@ -617,7 +625,9 @@ welcome.
 ## Reporting problems
 
 Tell us what you did, what you expected and what happened, and include a
-screenshot if you can. If a library looks wrong after a change, close the
+screenshot if you can. Settings → About → **Copy log** copies Krate's log;
+paste it into your report. It lists what Krate did (imports, syncs, saves,
+backups) and any errors, with file paths but no passwords. If a library looks wrong after a change, close the
 DJ app and restore the backup from **Backups → Libraries** (or undo the
 change in **Backups → Tag changes**) before doing anything else.
 
