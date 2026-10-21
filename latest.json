@@ -1,11 +1,11 @@
 {
-  "version": "0.1.11",
-  "notes": "\n### New\n- **USB stick export for Engine DJ too:** choose Rekordbox, Engine DJ or\n  both. Engine DJ gets the same playlists in the stick's Engine library,\n  using the same music files on the stick.\n- **Eject the stick** from Krate after an export (or any time, next to its\n  name), so it can be unplugged safely.\n",
-  "pub_date": "2026-10-21T08:41:59Z",
+  "version": "0.1.12",
+  "notes": "\n### New\n- **Your USB sticks in the sidebar:** a plugged-in stick shows under\n  **Devices** with its free space and an eject button; browse its\n  Rekordbox and Engine DJ playlists like a library.\n- **Import playlists from a stick** (Sync → USB stick → Import from\n  stick): a stick's playlists go into Rekordbox or Engine DJ on this\n  computer, matched to the music you already have. Only adds; nothing is\n  removed.\n- **See what the export is doing:** the track being written and its\n  playlists, whether it was copied or already on the stick, the transfer\n  speed and time left, and a percentage in the progress bar.\n- **New export screen:** your playlists on the left, the drives with their\n  free space and eject buttons on the right, and how much you've selected\n  along the bottom, with a big **Export to stick / Import from stick**\n  switch and an **All playlists** tick box.\n- **Clearer sub-menus:** the choices in Sync, Tidy, Backups and the player\n  look like buttons, and the one you're on is filled in.\n\n### Fixes\n- Exporting no longer says it will remove your other playlists from a\n  stick whose playlists sit in different folders than on your computer\n  (for example without the \"Imported Playlists\" folder).\n- A playlist whose name ends in a space no longer breaks the export.\n- The export preview says clearly that nothing is written until you click\n  **Export to *stick***.\n",
+  "pub_date": "2026-10-21T10:48:17Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.11-alpha/Krate_aarch64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWW5GZXVDNjBscUVNNldWSUZMNUZabzZheEZmUlYyWEtpQkkyUVZwTFkvNFQra0VPVzIxc2NiZ3pCbXQxckk5WXFKTjZGVTRuUFNxQ2o0TXhEWVdaaEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTcyMTE5CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4xMQpNdnVkbDdqTHdBQlpYTHI0cHBKMFhodkFjdkRPYlJMTUkyamVRVEhoczVjNmFOMVljQlEvSFpESkNZSVlSc2pqM0lnV3FHellycENtMTNJRWRCYWxEdz09Cg=="
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.12-alpha/Krate_aarch64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWW1NZUNFSHJTZjdSak4yb3lkdmJkME44NjZxWU05SUxVZk1hVFdtdzZCRFNRdThoekg0dm1YRk5KQVVSZDZuRVdHZ01pNnMra3J1d1Y1WmFweDZwcXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTc5Njk3CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4xMgpMMUxBTWQ0ek95WDczNzFWVUhoZE1WV25URlhrMnBSK3NyQndXTTVVcktFb2hpVS92THJFV2RaVlNFaEI5YUN6OURWTHF0dXpQc3hhTHpIODRKVDdCQT09Cg=="
     }
   }
 }
