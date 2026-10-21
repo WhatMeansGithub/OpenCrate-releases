@@ -10,6 +10,10 @@
     "darwin-aarch64": {
       "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.10-alpha/Krate_aarch64.app.tar.gz",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXI1RE5jd2tDcW96M2xMbzZVK3Q2ZHB2N2NnMGdnNnJNQkwvZElTV3dDOE9Tc3J2RHAxWVJmeVVSSFhFeXI1TGVFMytDKzE3NWJLYnFCSnV4TlE5a0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTQwNDcwCWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4xMAowR3owYTIzbkdadkNMbzVOUWhzaldmK3Fha3JlVDhrR0NocGNza0YwUllVMWdHZ2NQV0wzZ0s0ZlFxV1F2ZVVQOTNyTlEvR0NDbmtRcHczcUxUeXBBQT09Cg=="
+    },
+    "windows-x86_64": {
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.10-alpha/Krate_0.1.10_x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWpEV2JrUnBvemZIaThSeG44eGVOWjhuN2RhL1hMb2p4d2RiNkR0OFVoSlVyREdmZWFrMmcwalh2MDh1bElkeWFOeUlqcVhVSThhNFYrUURFaWRiL2dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTQxNTY4CWZpbGU6S3JhdGVfMC4xLjEwX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuMTAKQ0NzTW9tK01HblBKM0NKVW1yU1R4bXpCR2dGVFg2ZVl3cVJGbjljaXA0aTh2b0RhdDFObDhpSlNxTnY5a2o2cUIxV1ROeXc3R3dYeVVmcE9uVEl6Q3c9PQo="
     }
   }
 }
