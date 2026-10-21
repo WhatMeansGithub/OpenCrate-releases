@@ -129,6 +129,14 @@ that in Settings → General.
   your library on the computer, then export); to bring a stick's playlists
   into your library, see [Importing from a USB stick](#importing-from-a-usb-stick).
   A stick leaves the sidebar when it's ejected or unplugged.
+- **Selecting tracks:** click a track to select it, **⌘-click** (Ctrl-click
+  on Windows) to add or remove one, **Shift-click** to select everything
+  between it and the last one you clicked. Ratings keys, **Remove from
+  playlist**, dragging onto a playlist and dragging to reorder work on all
+  selected tracks.
+- **Played tracks:** a track you've played in Krate's player shows in
+  green in the track list (amber in the Winamp theme), wherever it
+  appears, until you quit Krate.
 - The **search** box filters by title, artist, album, genre, label and comment.
 - Click a **column header** to sort. Drag a header to move its column,
   and drag a header's right edge to make the column wider or narrower
@@ -155,7 +163,10 @@ that in Settings → General.
   it inside, or onto the library name to put it at the top; inside a
   playlist sorted by **#**, drag a track up or down to move it (drop it in the empty space below the list to move it to the end). Changes are saved into that library
   (backed up first; the app must be closed), and into your other
-  libraries too if it's the primary library (Settings → Sync).
+  libraries too if it's the primary library (Settings → Sync). Edits
+  show at once and are saved in the background, in order; if one can't be
+  saved (e.g. the app is open), Krate says so and puts the playlists back
+  as they are in the library.
 - **Format** shows the file type (MP3, AIFF, WAV, FLAC, …). **Bitrate** and
   **Label** are hidden at first; turn them on with a right-click on the
   headers.
