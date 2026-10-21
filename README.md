@@ -394,25 +394,33 @@ current state is backed up first, so you can go back from Backups.
 ### Exporting to a USB stick
 
 **Sync → USB stick** copies playlists from Rekordbox's library on this
-computer to a stick, with the music and Rekordbox's analysis (cues,
-loops, beatgrids, waveforms), in both of Rekordbox's stick formats: one
-for older players (CDJ-2000NXS2, XDJ-XZ, CDJ-3000 before firmware 3.30)
-and one for newer ones (CDJ-3000X, XDJ-AZ, OPUS-QUAD).
+computer to a stick, with the music, cues, loops and beatgrids, for
+**Rekordbox** (Pioneer players: both of Rekordbox's stick formats, for
+older players such as the CDJ-2000NXS2 and XDJ-XZ and newer ones such as
+the CDJ-3000X, XDJ-AZ and OPUS-QUAD) and/or **Engine DJ** (Denon players).
 
 1. Plug in the stick and choose it (**Refresh** if it doesn't show).
-2. Tick the playlists (a ticked folder takes all its playlists).
-3. **Preview export** shows how many playlists and tracks go on the stick,
-   and tracks left out (for example ones Rekordbox hasn't analysed).
-4. **Export now**. Eject the stick before unplugging it.
+2. Tick **Rekordbox**, **Engine DJ** or both. Engine DJ needs a library on
+   the stick already: plug the stick in with Engine DJ open once, so it
+   sets one up.
+3. Tick the playlists (a ticked folder takes all its playlists).
+4. **Preview export** shows, for each, how many playlists and tracks go on
+   the stick, and tracks left out (for example ones Rekordbox hasn't
+   analysed).
+5. **Export now** (Engine DJ must be closed for an Engine export). Then
+   click **Eject** (also next to the stick's name at any time) and unplug
+   it once Krate says it's ejected.
 
 The stick always gets your library as it is on this computer; Krate never
-changes your library from a stick. Playlists already on the stick that
-your library also has are exported again, so they stay; ones your library
-doesn't have leave the stick's list (the preview names them; their music
-stays on the stick). The stick's previous database is backed up first.
-Your players' settings on the stick are left alone. Exporting is never
-done automatically. For now it works from Rekordbox's own library (not
-Engine DJ or an XML export).
+changes your library from a stick. Each music file is copied once and
+used by both. For Rekordbox, playlists already on the stick that your
+library also has are exported again, so they stay; ones your library
+doesn't have leave the stick's Rekordbox list (the preview names them;
+their music stays on the stick). For Engine DJ, playlists and tracks are
+added, and nothing on the stick is removed. Each database is backed up
+before it's written, and your players' settings on the stick are left
+alone. Exporting is never done automatically. For now it works from
+Rekordbox's own library (not Engine DJ or an XML export).
 
 ### Saving cue and grid edits
 

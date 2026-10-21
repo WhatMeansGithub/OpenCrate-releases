@@ -1,19 +1,11 @@
 {
-  "version": "0.1.10",
-  "notes": "\n### New\n- **Export to a USB stick** (Sync → USB stick): playlists from Rekordbox's\n  library go onto a stick with their music, cues, loops and grids, for\n  older and newer Pioneer players alike. Playlists already on the stick\n  stay, and its previous database is backed up first.\n\n### Fixes\n- Krate opens nearly full screen the first time, and after that at the\n  size and place you left it (maximized, too).\n- \"Updating libraries…\" no longer squeezes in next to the import buttons;\n  what Krate is doing shows in the status bar only.\n\n",
-  "pub_date": "2026-10-20T23:54:16Z",
+  "version": "0.1.11",
+  "notes": "\n### New\n- **USB stick export for Engine DJ too:** choose Rekordbox, Engine DJ or\n  both. Engine DJ gets the same playlists in the stick's Engine library,\n  using the same music files on the stick.\n- **Eject the stick** from Krate after an export (or any time, next to its\n  name), so it can be unplugged safely.\n",
+  "pub_date": "2026-10-21T08:41:59Z",
   "platforms": {
-    "darwin-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.10-alpha/Krate_x64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWsxaGFwa0JHZE9tVDlsY3VzSy9FMDV6d1NYMnp0QlVBNFFGaUI4VjRDWGhqc3RjSklFUWswT2JHbmxzSFJ5MHlpQjhhRDBHRXdjSjNOOHhkczFMTlFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTQwNDQ4CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4xMAp4VzhLMTdSVE5qRXVQbjBUbWJOYmVwQ2dNK0NwdHRMSzN1RGsyQ1NNRnlJVHNOdjUvSDBJMWtSUXMxR2VOTE9GVU1zRWUvVG9RSGV1R2RucG1zeXlEdz09Cg=="
-    },
     "darwin-aarch64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.10-alpha/Krate_aarch64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXI1RE5jd2tDcW96M2xMbzZVK3Q2ZHB2N2NnMGdnNnJNQkwvZElTV3dDOE9Tc3J2RHAxWVJmeVVSSFhFeXI1TGVFMytDKzE3NWJLYnFCSnV4TlE5a0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTQwNDcwCWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4xMAowR3owYTIzbkdadkNMbzVOUWhzaldmK3Fha3JlVDhrR0NocGNza0YwUllVMWdHZ2NQV0wzZ0s0ZlFxV1F2ZVVQOTNyTlEvR0NDbmtRcHczcUxUeXBBQT09Cg=="
-    },
-    "windows-x86_64": {
-      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.10-alpha/Krate_0.1.10_x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWpEV2JrUnBvemZIaThSeG44eGVOWjhuN2RhL1hMb2p4d2RiNkR0OFVoSlVyREdmZWFrMmcwalh2MDh1bElkeWFOeUlqcVhVSThhNFYrUURFaWRiL2dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTQxNTY4CWZpbGU6S3JhdGVfMC4xLjEwX3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjEuMTAKQ0NzTW9tK01HblBKM0NKVW1yU1R4bXpCR2dGVFg2ZVl3cVJGbjljaXA0aTh2b0RhdDFObDhpSlNxTnY5a2o2cUIxV1ROeXc3R3dYeVVmcE9uVEl6Q3c9PQo="
+      "url": "https://github.com/WhatMeansGithub/krate-releases/releases/download/v0.1.11-alpha/Krate_aarch64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWW5GZXVDNjBscUVNNldWSUZMNUZabzZheEZmUlYyWEtpQkkyUVZwTFkvNFQra0VPVzIxc2NiZ3pCbXQxckk5WXFKTjZGVTRuUFNxQ2o0TXhEWVdaaEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNTcyMTE5CWZpbGU6S3JhdGUuYXBwLnRhci5negl2ZXJzaW9uOjAuMS4xMQpNdnVkbDdqTHdBQlpYTHI0cHBKMFhodkFjdkRPYlJMTUkyamVRVEhoczVjNmFOMVljQlEvSFpESkNZSVlSc2pqM0lnV3FHellycENtMTNJRWRCYWxEdz09Cg=="
     }
   }
 }
