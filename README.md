@@ -122,6 +122,32 @@ that in Settings → General.
   folders. The small number in front of a playlist is how many tracks it
   has. Click a playlist to show its tracks; click the library name for all
   tracks.
+- **OpenCrate's own library** is always at the top of the sidebar, even
+  before you import anything. It's where music comes in without Rekordbox
+  or Engine DJ. Click the **+** on its row (or right-click it) for **New
+  playlist…**, **New folder…**, **Add files…** (songs), **Add folder…**
+  (everything inside, any depth) and **Add folder as playlist…** (also
+  makes a playlist named after each folder). Right-click one of its
+  playlists (or click its **+**) for **Add files here…** and **Add folder
+  here…**, which put the music into that playlist (and into the library,
+  if it isn't there yet), **Rename…** and **Delete playlist…**.
+  You can also drag tracks from your Rekordbox or Engine DJ library onto
+  one of its playlists (the track is copied into OpenCrate's library,
+  without its cues and grid). Inside OpenCrate's library you can drag tracks onto its playlists,
+  remove them from a playlist (**Remove from playlist**, ⌫) and drag them
+  to reorder, as in your DJ libraries. MP3, M4A, WAV, AIFF and FLAC files
+  are added; title, artist, album, genre, year, length and bitrate are
+  read from the file's tags (a file with unreadable tags still appears,
+  named after the file). The files themselves are never changed or moved,
+  and a song that's already in OpenCrate's library isn't added twice.
+  Removing the library with **×** deletes only its list (tracks and
+  playlists), not your music. Add music with the **+** menu (or a
+  playlist's **+**), or drag files and folders in from Finder or Explorer
+  (folders become playlists). Drop them on an OpenCrate playlist or on
+  the OpenCrate library in the sidebar (the row lights up), or anywhere
+  else to add them to the playlist that's open. For now these tracks can be browsed, searched and played;
+  analysing them and sending them to Rekordbox, Engine DJ or a USB stick
+  comes next.
 - **Devices:** a plugged-in USB stick with a Rekordbox export or an Engine
   DJ library shows under **Devices** in the sidebar, with its free space
   and an **⏏** button to eject it. Browse its Rekordbox and Engine DJ
@@ -157,8 +183,10 @@ that in Settings → General.
   next to a playlist it goes right below it, in Rekordbox; Engine DJ adds
   it at the end). Right-click a playlist or folder to **Rename…** or
   **Delete…** it (its tracks stay in the collection). Drag tracks from the
-  list onto a playlist to add them; inside a playlist, right-click a track
-  for **Remove from playlist**. **Drag to reorganise:** drag a playlist
+  list onto a playlist to add them, or right-click a track and choose
+  **Add to playlist ▸** (folders open as submenus; tracks a playlist
+  already has aren't added twice); inside a playlist, right-click a track
+  for **Remove from playlist**. Both work on all selected tracks. **Drag to reorganise:** drag a playlist
   or folder onto a playlist to put it right below, onto a folder to put
   it inside, or onto the library name to put it at the top; inside a
   playlist sorted by **#**, drag a track up or down to move it. **Delete**
@@ -668,6 +696,19 @@ Settings are grouped in a sidebar:
   - **Don't check for updates.**
   - **Check now** looks right away. If you skipped a version, **Offer it
     again** brings it back.
+- **General → OpenCrate's data:** the folder where OpenCrate keeps its own
+  data: its library (OpenCrate's own playlists, the list of your DJ
+  libraries), the backups it makes before changing your DJ libraries, and
+  downloaded modules. Your music and your DJ apps' libraries aren't part
+  of it. **Change folder…** copies everything into an empty folder you
+  choose (for example on a bigger or external drive), checks the copy,
+  and uses it after you restart OpenCrate; the old folder is left as it
+  is, so you can delete it yourself once you're happy. **Use the standard
+  folder** goes back (after a restart) to the standard folder, which holds
+  your data as it was when you moved it away; anything done since then
+  stays in your folder. If your folder can't be found when OpenCrate
+  starts (an unplugged drive), OpenCrate says so and doesn't open
+  anything else in its place: connect the drive and restart.
 - **General → DJ libraries:** the libraries you chose not to be asked
   about at startup. **Ask again** offers one again the next time OpenCrate
   starts.
@@ -716,11 +757,13 @@ Settings are grouped in a sidebar:
   loaded tracks stay where they were, with their tempo, EQ and sync. If the
   chosen device is unplugged, OpenCrate uses the system default until it's
   back. **Refresh list** looks for newly connected devices.
-- **Sync → Primary library:** **None** (default): edits you make in OpenCrate,
-  such as ratings, go only into the library you're viewing, and the others
-  catch up when you sync. Pick a library to make its edits also go
-  straight into your other libraries (one whose app is open gets them with
-  the next sync).
+- **Sync → Primary library:** edits you make in OpenCrate (ratings,
+  playlists, cues and grids) in the primary library also go straight into
+  your other libraries (one whose app is open gets them when it closes or
+  with the next sync). If you have both Rekordbox and Engine DJ, Rekordbox
+  is the primary library until you choose another. **None**: edits go
+  only into the library you're viewing, and the others catch up when you
+  sync.
   - **Sync automatically when Rekordbox closes** (off by default; with
     Rekordbox as the primary library): when you quit Rekordbox and its
     library changed, OpenCrate syncs it into Engine DJ in the background, like
