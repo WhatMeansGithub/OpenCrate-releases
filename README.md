@@ -1,11 +1,11 @@
-# Krate user manual
+# OpenCrate user manual
 
-Krate is a DJ library manager for macOS and Windows. It reads your
+OpenCrate (formerly Krate) is a DJ library manager for macOS and Windows. It reads your
 **Rekordbox** and **Engine DJ** libraries, syncs playlists, cues and
 beatgrids from Rekordbox to Engine DJ, and cleans up messy track info and
 files so they work on every player.
 
-> **Alpha version.** Krate is early software. It backs up your libraries
+> **Alpha version.** OpenCrate is early software. It backs up your libraries
 > before every change, but please keep your own backups as well, and tell
 > us about anything that looks wrong.
 
@@ -14,7 +14,7 @@ files so they work on every player.
 ## Contents
 
 1. [Installing](#installing)
-2. [How Krate keeps your library safe](#how-krate-keeps-your-library-safe)
+2. [How OpenCrate keeps your library safe](#how-krate-keeps-your-library-safe)
 3. [Getting started](#getting-started)
 4. [Library: browsing your tracks](#library-browsing-your-tracks)
 5. [Sync: Rekordbox to Engine DJ](#sync-rekordbox-to-engine-dj)
@@ -22,7 +22,7 @@ files so they work on every player.
 7. [Backups: undoing changes](#backups-undoing-changes)
 8. [Settings](#settings)
 9. [The status bar](#the-status-bar)
-10. [Not in Krate yet](#not-in-krate-yet)
+10. [Not in OpenCrate yet](#not-in-krate-yet)
 11. [Reporting problems](#reporting-problems)
 
 ---
@@ -30,61 +30,61 @@ files so they work on every player.
 ## Installing
 
 Download the file for your computer from the
-[releases page](https://github.com/WhatMeansGithub/krate-releases/releases):
+[releases page](https://github.com/WhatMeansGithub/OpenCrate-releases/releases):
 
 | Your computer | File |
 |---|---|
-| Mac with Apple Silicon (M1 or newer) | `Krate_…_aarch64.dmg` |
-| Mac with an Intel processor | `Krate_…_x64.dmg` |
-| Windows | `Krate_…_x64-setup.exe` |
+| Mac with Apple Silicon (M1 or newer) | `OpenCrate_…_aarch64.dmg` |
+| Mac with an Intel processor | `OpenCrate_…_x64.dmg` |
+| Windows | `OpenCrate_…_x64-setup.exe` |
 
 Not sure which Mac you have? Apple menu → **About This Mac**: "Chip: Apple
 M…" means Apple Silicon, "Processor: Intel" means Intel.
 
 These builds aren't signed yet, so the first launch needs one extra step:
 
-- **macOS:** open the `.dmg` and drag **Krate** into **Applications**. If
-  macOS says Krate can't be opened, go to **System Settings → Privacy &
-  Security**, scroll down and click **Open Anyway**. (Or right-click Krate
-  in Applications → **Open**.) If macOS instead says Krate "is damaged",
-  open **Terminal** and run `xattr -cr /Applications/Krate.app`, then open
-  Krate again.
+- **macOS:** open the `.dmg` and drag **OpenCrate** into **Applications**. If
+  macOS says OpenCrate can't be opened, go to **System Settings → Privacy &
+  Security**, scroll down and click **Open Anyway**. (Or right-click OpenCrate
+  in Applications → **Open**.) If macOS instead says OpenCrate "is damaged",
+  open **Terminal** and run `xattr -cr /Applications/OpenCrate.app`, then open
+  OpenCrate again.
 - **Windows:** run the installer. If SmartScreen warns about an unknown
   app, click **More info → Run anyway**.
 
-### Updating Krate
+### Updating OpenCrate
 
-Krate updates itself. When a new version is out, a blue banner at the top
+OpenCrate updates itself. When a new version is out, a blue banner at the top
 offers it: **Download update**, then **Restart and update**. Or choose
 **Skip this version** or **Later**. **See what's new** in the banner shows
 what changed in that version before you install it; the pop-up links to
 the release on GitHub. After updating, a small banner says so, again with
 **See what's new** (any time later: Settings → About → **What's new in
-this version**). Updates are signed, and Krate only
-installs updates that come from Krate's own releases. Krate never restarts
-by itself, and you can't restart while it's writing to a library. How Krate
+this version**). Updates are signed, and OpenCrate only
+installs updates that come from OpenCrate's own releases. OpenCrate never restarts
+by itself, and you can't restart while it's writing to a library. How OpenCrate
 handles updates is set in [Settings](#settings).
 
-(Keep Krate in your Applications folder on a Mac; updates can't replace a
+(Keep OpenCrate in your Applications folder on a Mac; updates can't replace a
 copy that's still on the disk image.)
 
 ---
 
-## How Krate keeps your library safe
+## How OpenCrate keeps your library safe
 
-- **Reading never changes anything.** Krate reads your DJ libraries from a
+- **Reading never changes anything.** OpenCrate reads your DJ libraries from a
   copy and never modifies them just by looking.
-- **Backups before every write.** Before Krate changes a DJ library
+- **Backups before every write.** Before OpenCrate changes a DJ library
   (syncing, Tidy, restoring), it makes a backup and checks that the backup
   is complete. Before it changes an audio file's tags, it backs up that
   file's tags and artwork (or the whole file, see [Settings](#settings)).
-- **Only while the DJ app is closed.** Krate won't change Rekordbox's or
+- **Only while the DJ app is closed.** OpenCrate won't change Rekordbox's or
   Engine DJ's library while that app is open. The
   [status bar](#the-status-bar) shows when an app is open.
-- **Checked after writing.** After writing to a library, Krate checks the
+- **Checked after writing.** After writing to a library, OpenCrate checks the
   database is intact and the values read back correctly. If not, it puts
   the backup back automatically.
-- **Your music is never deleted or re-encoded.** Krate only edits tags
+- **Your music is never deleted or re-encoded.** OpenCrate only edits tags
   (title, artist, …); the audio itself is never touched.
 - **Everything can be undone** from the [Backups](#backups-undoing-changes)
   tab.
@@ -93,7 +93,7 @@ copy that's still on the disk image.)
 
 ## Getting started
 
-When you first open Krate, it looks for your libraries in their usual
+When you first open OpenCrate, it looks for your libraries in their usual
 places:
 
 - **Rekordbox** (6 and 7): your Rekordbox library on this computer.
@@ -104,12 +104,12 @@ Click **Import Rekordbox library** or **Import Engine DJ library** (later on, th
 folder somewhere else (for example on a USB drive).
 
 You can import several libraries; pick one in the sidebar. Imported
-libraries update themselves: every time Krate starts, when you switch
-back to Krate's window, and after a sync, Tidy or restore, it re-reads
+libraries update themselves: every time OpenCrate starts, when you switch
+back to OpenCrate's window, and after a sync, Tidy or restore, it re-reads
 any library that changed.
 
-Each time Krate starts, it also looks for DJ libraries on this computer
-that aren't in Krate yet. If it finds one, a banner at the top offers to
+Each time OpenCrate starts, it also looks for DJ libraries on this computer
+that aren't in OpenCrate yet. If it finds one, a banner at the top offers to
 add it (with several, tick the ones you want). **Not now** asks again next
 time; tick **Don't ask again** to stop being asked about it. You can undo
 that in Settings → General.
@@ -134,9 +134,9 @@ that in Settings → General.
   between it and the last one you clicked. Ratings keys, **Remove from
   playlist**, dragging onto a playlist and dragging to reorder work on all
   selected tracks.
-- **Played tracks:** a track you've played in Krate's player shows in
+- **Played tracks:** a track you've played in OpenCrate's player shows in
   green in the track list (amber in the Winamp theme), wherever it
-  appears, until you quit Krate.
+  appears, until you quit OpenCrate.
 - The **search** box filters by title, artist, album, genre, label and comment.
 - Click a **column header** to sort. Drag a header to move its column,
   and drag a header's right edge to make the column wider or narrower
@@ -161,18 +161,21 @@ that in Settings → General.
   for **Remove from playlist**. **Drag to reorganise:** drag a playlist
   or folder onto a playlist to put it right below, onto a folder to put
   it inside, or onto the library name to put it at the top; inside a
-  playlist sorted by **#**, drag a track up or down to move it (drop it in the empty space below the list to move it to the end). Changes are saved into that library
+  playlist sorted by **#**, drag a track up or down to move it. **Delete**
+  (or Backspace) removes the selected tracks from the playlist, or deletes
+  the selected playlist in the sidebar, after asking; **⌘-Delete**
+  (Ctrl-Delete on Windows) does it at once, as in Rekordbox (drop it in the empty space below the list to move it to the end). Changes are saved into that library
   (backed up first; the app must be closed), and into your other
   libraries too if it's the primary library (Settings → Sync). Edits
   show at once and are saved in the background, in order; if one can't be
-  saved (e.g. the app is open), Krate says so and puts the playlists back
+  saved (e.g. the app is open), OpenCrate says so and puts the playlists back
   as they are in the library.
 - **Format** shows the file type (MP3, AIFF, WAV, FLAC, …). **Bitrate** and
   **Label** are hidden at first; turn them on with a right-click on the
   headers.
 - Drag the **sidebar's right edge** to make it wider or narrower; drag it
   far to the left, or click **‹** next to "Libraries", to hide it. Click
-  the thin strip with **›** to bring it back. Krate remembers the layout.
+  the thin strip with **›** to bring it back. OpenCrate remembers the layout.
 - A faint **waveform** behind each title shows the track's shape at a
   glance (from Rekordbox's or Engine DJ's own analysis; tracks that haven't
   been analysed show none).
@@ -192,7 +195,7 @@ Load a track into a deck at the bottom of the window by:
   Deck B** (Deck B switches the player to two decks), or
 - **double-clicking** it (deck A, or deck B while A is playing).
 
-If the deck is playing, Krate asks before replacing its track. Playback
+If the deck is playing, OpenCrate asks before replacing its track. Playback
 keeps going while you switch tabs.
 
 Click **Player** (top left of the player area) to minimize it to one line,
@@ -253,7 +256,7 @@ On a deck:
   leaves it.
 - **Q (quantize):** new hot cues, memory cues and loop points snap to the
   nearest beat, and jumping to a hot cue while playing keeps the beat (it
-  lands as far past the cue as the deck was past its beat). Krate
+  lands as far past the cue as the deck was past its beat). OpenCrate
   remembers the setting.
 - **CUES:** the track's cues and saved loops in time order (the number is
   how many it has): hot cues A–H, memory cues (**MEM**) and loops with
@@ -270,12 +273,10 @@ On a deck:
   Changing the tempo makes the grid steady, keeping the beat nearest the
   playhead in place. Sync and the phase meter follow the edited grid.
   **Done** goes back to the mixing tools.
-- **EDITED:** appears when a track's cues, loops or grid were changed in
-  Krate. Edits are saved in Krate (for that audio file, in every library).
-  Click EDITED to go back to the library's own cues, loops or grid, or
-  choose **Save
-  edits to Engine DJ / Rekordbox…** to open Sync → Cue & grid edits (see
-  [Saving cue and grid edits](#saving-cue-and-grid-edits)).
+- **EDITED:** appears while a track's changed cues, loops or grid aren't
+  in your DJ library yet (they're saved into it on their own; see
+  [Saving cue and grid edits](#saving-cue-and-grid-edits)). Click it to go
+  back to the library's own cues, loops or grid.
 - **Volume:** the deck's volume, in percent.
 - **EQ:** the bands of the mixer chosen in Settings →
   Player & mixer, highs on the left. As knobs: drag up or down (hold Shift
@@ -298,7 +299,7 @@ Below that, the beatmatching tools:
 - **MT (Master Tempo):** keylock. With it on, changing the tempo keeps the
   key; with it off, the key rises and falls with the tempo like a record.
 - **Key:** the key the track sounds in now. **−** and **+** shift it by a
-  semitone; click the shifted key to reset it. Krate shows keys the way
+  semitone; click the shifted key to reset it. OpenCrate shows keys the way
   your library writes them (Am, 8A or 1m).
 
 With 2 decks you also get:
@@ -338,11 +339,11 @@ beatgrids into Engine DJ, so you can play the same library on Denon
 gear.
 
 Sync has two parts, switched at the top: **Libraries** (described here)
-and **Cue & grid edits** (saving what you changed in Krate's player; see
-below).
+and **USB stick** (see below). Cue and grid edits from OpenCrate's player
+don't need a sync: they're saved into your libraries on their own.
 
 1. **From:** your Rekordbox library (or a Rekordbox XML export).
-   **To:** your Engine DJ library. Krate finds both automatically; use
+   **To:** your Engine DJ library. OpenCrate finds both automatically; use
    **Change…** to pick another location.
 2. **What:** the **full library**, or only the **playlists** you tick.
 3. **Mode:**
@@ -359,7 +360,7 @@ below).
    - **Keep duplicate cues:** keep cues at the same position as an existing
      one.
    - **Lock beatgrids** so Engine DJ doesn't re-analyse them.
-5. Click **Preview changes**. Krate lists exactly which tracks and
+5. Click **Preview changes**. OpenCrate lists exactly which tracks and
    playlists will be added, changed or removed. Nothing has been written
    yet.
 6. Click **Sync now** to write it. Engine DJ must be closed.
@@ -367,7 +368,7 @@ below).
 Cue points line up exactly between the apps, including the small timing
 difference Rekordbox and Engine DJ have with some MP3 files.
 
-**Syncing again.** Krate remembers what both libraries held after each
+**Syncing again.** OpenCrate remembers what both libraries held after each
 sync, so the next one knows what you changed where since then (track
 info, ratings, cues, loops and beatgrids), and applies it without asking:
 
@@ -395,7 +396,7 @@ info, ratings, cues, loops and beatgrids), and applies it without asking:
   time.
 - Cues or loops **removed** in one app stay in the other.
 - **Probably the same track, moved:** tracks that look like a moved copy
-  of one Krate knows (same size, length, artist and title). They're only
+  of one OpenCrate knows (same size, length, artist and title). They're only
   listed for now, not linked.
 
 The first sync between two libraries works as before; remembering starts
@@ -405,9 +406,14 @@ from there.
 preview) lists the last syncs and which libraries each one wrote.
 **Undo this sync** on the most recent one (also shown right after a sync)
 puts every library it wrote, Engine DJ and with two-way Rekordbox too,
-back exactly as it was before, and Krate's memory with it. The apps must
+back exactly as it was before, and OpenCrate's memory with it. The apps must
 be closed. Changes made in them since that sync are undone too; their
 current state is backed up first, so you can go back from Backups.
+
+**Album art (Engine DJ):** tracks get the cover embedded in their audio
+file, stored the way Engine DJ stores it, so it shows in Engine DJ and on
+Denon players. Tracks already in Engine DJ without a cover get it with the
+next sync; covers Engine DJ already has stay.
 
 ### Exporting to a USB stick
 
@@ -433,10 +439,15 @@ ones such as the CDJ-3000X, XDJ-AZ and OPUS-QUAD) and/or **Engine DJ**
    The bar at the bottom shows how far it is in percent, the track just
    written (copied, or already on the stick) and the playlists it's in,
    the transfer speed, how much has been written and the time left.
-6. Click **⏏** next to the stick and unplug it once Krate says it's
+6. Click **⏏** next to the stick and unplug it once OpenCrate says it's
    ejected.
 
-The stick always gets your library as it is on this computer. Each music
+The stick always gets your library as it is on this computer, marked
+as your Rekordbox library's: Rekordbox recognises the tracks as its own,
+and each track and playlist keeps its number from the last export, so the
+players' history stays right. For Engine DJ, songs it already has on the
+stick (from its own export, or its import of the Rekordbox export) are
+reused, not added twice; the preview counts only new ones. Each music
 file is copied once and used by both formats; a file already on the stick
 is only copied again if it changed on your computer since (for example
 after Tidy fixed its tags). If a track's artist or album changed, it gets
@@ -477,42 +488,38 @@ libraries get the playlists too. Importing is never done automatically.
 
 ### Saving cue and grid edits
 
-Hot cues, memory cues, saved loops and beatgrids you change in Krate's
-player stay in
-Krate until you save them into your DJ library. Open **Sync → Cue & grid
-edits** (the number shows how many tracks you've edited), or click
-**EDITED** on a deck and choose **Save edits to Engine DJ / Rekordbox…**.
+Hot cues, memory cues, saved loops and beatgrids you change in OpenCrate's
+player are saved into your DJ library on their own, a moment after your
+last change, like ratings: into the library the track is from (and your
+other libraries too if it's the **primary library**, Settings → Sync),
+backed up first. If that app is open, the edits wait and are saved when
+you close it (or when OpenCrate next starts); the status bar says so. While
+an edit isn't in your DJ library yet, the deck shows **EDITED**: click it
+to go back to the library's own cues, loops or grid instead. To undo a
+saved edit, restore the library from **Backups**.
 
-1. **To:** **Engine DJ** or **Rekordbox 6/7**, found automatically. Use
-   **Change…** to pick another library, such as the `Engine Library`
-   folder on a USB drive.
-2. The list shows every edited track: what you edited in Krate, and what
-   saving changes in that library, for example "Hot cues 3 → 5, grid
-   replaced". **Up to date** means the library already has exactly these.
-   **Not in this library** tracks need adding (or syncing) first; **Not
-   analysed in Engine yet** tracks need loading in Engine DJ once.
-3. Tick the tracks to save. Everything that would change starts ticked.
-4. Click **Save … tracks**. The DJ app must be closed. Krate backs up its
-   library first; restore it from Backups if you change your mind.
+Tracks a library doesn't have, and tracks Engine DJ hasn't analysed yet,
+can't take the edits there: they stay **EDITED** in OpenCrate (load the track
+in Engine DJ once, or sync it, and they follow).
 
-**Engine DJ:** Krate's hot cues replace Engine's for those tracks, and the
-beatgrid replaces Engine's. Memory cues stay in Krate (Engine DJ has
-none). Loops saved in Krate replace Engine's, on its 8 loop pads (a loop
+**Engine DJ:** OpenCrate's hot cues replace Engine's for those tracks, and the
+beatgrid replaces Engine's. Memory cues stay in OpenCrate (Engine DJ has
+none). Loops saved in OpenCrate replace Engine's, on its 8 loop pads (a loop
 keeps its pad, the others fill free pads in time order); if you didn't
 change a track's loops, Engine's stay.
 
-**Rekordbox:** Krate's hot cues and memory cues replace Rekordbox's for
-those tracks. Loops saved in Krate replace Rekordbox's: a hot loop keeps
+**Rekordbox:** OpenCrate's hot cues and memory cues replace Rekordbox's for
+those tracks. Loops saved in OpenCrate replace Rekordbox's: a hot loop keeps
 its pad unless a hot cue now sits there, other loops become memory loops.
 If you didn't change a track's loops, Rekordbox's stay, except a hot loop
-on a pad that now holds a Krate hot cue. The beatgrid replaces
+on a pad that now holds a OpenCrate hot cue. The beatgrid replaces
 Rekordbox's, in the track's analysis files, the same way Rekordbox saves
 a grid you move yourself; those files are backed up with the library and
 restored with it. A track Rekordbox hasn't analysed yet can't take a grid
-(the list says so). Rekordbox has a fixed set of cue colours: Krate's hot
+(it stays EDITED). Rekordbox has a fixed set of cue colours: OpenCrate's hot
 cue colours are all among them, and any other colour gets the nearest
-Rekordbox colour (the list says how many). If
-your library uses Cloud Library Sync, Krate says so: Rekordbox then sends
+Rekordbox colour. If
+your library uses Cloud Library Sync, OpenCrate says so: Rekordbox then sends
 the saved cues to your other computers when it next syncs.
 
 ---
@@ -535,7 +542,7 @@ go to** shows where fixes are written:
   up first; Engine DJ must be closed).
 
 If you change a track in Rekordbox or Engine DJ after Tidy showed its
-preview, Krate notices when you apply: those changes are left out (and
+preview, OpenCrate notices when you apply: those changes are left out (and
 listed), so Tidy never overwrites an edit you made in the meantime. Scan
 again to see the current values.
 
@@ -562,6 +569,7 @@ A checklist of fixes that run together:
 | Fill in the remixer | from titles like `Track (Someone Remix)` |
 | Fix ALL CAPS / all lowercase | Title Case for titles, artists and albums written entirely in capitals or lowercase |
 | Tidy spacing | double spaces, spaces at the ends, stray separators |
+| Repair broken dates | dates in a file's tags that apps can't read, such as a year written `25-08-2017`: Rekordbox shows the year as 25, and OpenCrate can't read the file's artwork or change its tags. The file and your libraries get the year it contains (2017); the preview shows what the file says. Only MP3, WAV and AIFF files have this kind of date |
 
 1. Tick the fixes you want and click **Scan with … fixes**.
 2. The list on the right shows every change (before → after). Click a fix
@@ -597,7 +605,7 @@ problems, grouped by how serious they are:
   Linux-based players such as Denon's won't find them on a USB stick),
   hidden macOS `._` files, risky characters in file names, formats most
   players can't play, old ID3v2.2 tags, unusual or oversized artwork,
-  tracks listed twice, tags Krate couldn't read.
+  tracks listed twice, tags OpenCrate couldn't read.
 - **Good to know:** very long paths, high sample rates (above 48 kHz /
   24-bit), missing artwork, progressive JPEG artwork, duplicate tracks.
 
@@ -609,14 +617,14 @@ Checks a DJ USB stick with a Rekordbox export and/or an Engine DJ library.
 Nothing on the stick is changed, except junk you choose to delete.
 
 1. Pick the stick and click **Check stick**.
-2. Krate shows:
-   - the stick's **file system** (FAT32 and exFAT are safest; Krate warns
+2. OpenCrate shows:
+   - the stick's **file system** (FAT32 and exFAT are safest; OpenCrate warns
      about Mac-only or Windows-only formats),
    - what's on it (tracks in the Rekordbox export and Engine library),
    - which **Rekordbox databases** it has. Rekordbox writes two: one for
      newer players (CDJ-3000X, XDJ-AZ, OPUS-QUAD, OMNIS-DUO) and one for
      older players (CDJ-2000NXS2, XDJ-XZ, CDJ-3000 before firmware 3.30).
-     If both are there but list different playlists or tracks, Krate says
+     If both are there but list different playlists or tracks, OpenCrate says
      which, because newer and older players would then show different
      things. Exporting again from Rekordbox 7.2.11 or newer fixes it,
    - **junk files**: macOS `._` files and `.DS_Store` files, and a leftover
@@ -633,11 +641,11 @@ Nothing on the stick is changed, except junk you choose to delete.
 
 ### Libraries
 
-Every backup Krate made of your DJ libraries: which app, when, why, and
+Every backup OpenCrate made of your DJ libraries: which app, when, why, and
 how many tracks changed since. Select one to see exactly which tracks were
 added, removed or changed since then. **Restore** puts the library back
 exactly as it was; the current state is backed up first, so a restore can
-be undone too. The DJ app must be closed. Krate keeps the 20 most recent
+be undone too. The DJ app must be closed. OpenCrate keeps the 20 most recent
 backups per library.
 
 ### Tag changes
@@ -655,13 +663,13 @@ Settings are grouped in a sidebar:
 
 - **General → Updates:**
   - **Install updates automatically:** downloads new versions in the
-    background and installs them when you quit Krate.
+    background and installs them when you quit OpenCrate.
   - **Tell me about updates** (default): shows a banner; you decide when.
   - **Don't check for updates.**
   - **Check now** looks right away. If you skipped a version, **Offer it
     again** brings it back.
 - **General → DJ libraries:** the libraries you chose not to be asked
-  about at startup. **Ask again** offers one again the next time Krate
+  about at startup. **Ask again** offers one again the next time OpenCrate
   starts.
 - **Appearance → Theme:** Dark, Light, Gray, High contrast or Classic
   Winamp.
@@ -669,7 +677,7 @@ Settings are grouped in a sidebar:
   screen) to larger, with a preview; the list follows as you drag.
   **Reset** goes back to the standard size.
 - **Appearance → Album art:** show or hide covers in the track list and on
-  the decks. Krate keeps small copies of the covers (in your computer's
+  the decks. OpenCrate keeps small copies of the covers (in your computer's
   cache folder), so they appear right away instead of being read from the
   audio files each time; a changed cover is picked up automatically. The
   section shows how many are cached and how much space they use. **Clear
@@ -689,7 +697,7 @@ Settings are grouped in a sidebar:
   - **Deck waveforms:** **Blue** (one colour), **Tri-band** (bass, mids
     and highs layered in blue, orange and white) or **RGB** (red = bass,
     green = mids, blue = highs).
-  - **When Krate starts:** **Start maximized**, **Start minimized** or
+  - **When OpenCrate starts:** **Start maximized**, **Start minimized** or
     **Remember the last state** (open or minimized, as you left it). Also
     **Minimize on other screens** (on unless you turn it off): collapses the
     player while Sync, Tidy, Backups or Settings is open and opens it again
@@ -706,21 +714,21 @@ Settings are grouped in a sidebar:
   (your computer's sound setting) or a specific device such as headphones,
   an audio interface or a DJ controller. Switching pauses anything playing;
   loaded tracks stay where they were, with their tempo, EQ and sync. If the
-  chosen device is unplugged, Krate uses the system default until it's
+  chosen device is unplugged, OpenCrate uses the system default until it's
   back. **Refresh list** looks for newly connected devices.
-- **Sync → Primary library:** **None** (default): edits you make in Krate,
+- **Sync → Primary library:** **None** (default): edits you make in OpenCrate,
   such as ratings, go only into the library you're viewing, and the others
   catch up when you sync. Pick a library to make its edits also go
   straight into your other libraries (one whose app is open gets them with
   the next sync).
   - **Sync automatically when Rekordbox closes** (off by default; with
     Rekordbox as the primary library): when you quit Rekordbox and its
-    library changed, Krate syncs it into Engine DJ in the background, like
+    library changed, OpenCrate syncs it into Engine DJ in the background, like
     the Sync button with Merge, one way (changes made in Engine DJ wait for
     a manual sync). It's backed up and listed under Recent syncs, so it
     can be undone. If Engine DJ is open, a track changed in both apps, more
     than 200 tracks would change, or the two were never synced by hand,
-    Krate tells you to open Sync instead.
+    OpenCrate tells you to open Sync instead.
 - **Sync → When something changed in both libraries:** for track info,
   rating, cues, loops and beatgrid: **Newest change wins** (default: the
   app that edited the track last; asks when that's unknown), **Ask me**,
@@ -734,13 +742,13 @@ Settings are grouped in a sidebar:
     (recommended: small backups, and undo still restores the exact original
     file) or **The entire file** (a full copy of every file before it's
     changed).
-- **Modules:** optional parts Krate downloads only when you want them, so
+- **Modules:** optional parts OpenCrate downloads only when you want them, so
   the app itself stays small (audio analysis, file conversion and the
   like, as they become available). Each shows its size with **Download**,
-  **Update** or **Remove**. Every module is signed by Krate and checked
+  **Update** or **Remove**. Every module is signed by OpenCrate and checked
   before it's installed. A feature that needs a module offers the
   download the first time you use it. There are no modules yet.
-- **About:** Krate's version and licence. **Copy log** copies Krate's log
+- **About:** OpenCrate's version and licence. **Copy log** copies OpenCrate's log
   (what it did and any errors) for a bug report; **Show log file** opens
   its folder.
 
@@ -760,13 +768,13 @@ out. Computers without a battery don't show it.
 
 ## The status bar
 
-The bar at the bottom shows what Krate is doing (importing, scanning,
+The bar at the bottom shows what OpenCrate is doing (importing, scanning,
 writing tags, syncing…) and, for each DJ app:
 
 | Badge | Meaning |
 |---|---|
-| **Rekordbox open · read-only** | Krate won't change Rekordbox's library until you quit Rekordbox |
-| **Rekordbox closed · writable** | Krate can write into Rekordbox (after a backup); keep it closed until Krate is done |
+| **Rekordbox open · read-only** | OpenCrate won't change Rekordbox's library until you quit Rekordbox |
+| **Rekordbox closed · writable** | OpenCrate can write into Rekordbox (after a backup); keep it closed until OpenCrate is done |
 | **Rekordbox · files only** | Writing into Rekordbox is off in Settings; use Reload Tag in Rekordbox |
 | **Engine DJ open / closed** | The same for Engine DJ |
 
@@ -774,7 +782,7 @@ Hover over a badge for details.
 
 ---
 
-## Not in Krate yet
+## Not in OpenCrate yet
 
 Planned, but not available in this version:
 
@@ -798,18 +806,18 @@ welcome.
 ## Reporting problems
 
 Tell us what you did, what you expected and what happened, and include a
-screenshot if you can. Settings → About → **Copy log** copies Krate's log;
-paste it into your report. It lists what Krate did (imports, syncs, saves,
+screenshot if you can. Settings → About → **Copy log** copies OpenCrate's log;
+paste it into your report. It lists what OpenCrate did (imports, syncs, saves,
 backups) and any errors, with file paths but no passwords. If a library looks wrong after a change, close the
 DJ app and restore the backup from **Backups → Libraries** (or undo the
 change in **Backups → Tag changes**) before doing anything else.
 
-If Krate shows **Please update Krate** when it starts, your Krate library
+If OpenCrate shows **Please update OpenCrate** when it starts, your OpenCrate library
 was last opened by a newer version. Click **Get the latest version** and
 install it; nothing has been lost or changed. (Versions before 0.1.3 quit
 straight away in this case instead of showing the message.)
 
 ---
 
-Krate is free software under the
+OpenCrate is free software under the
 [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).
