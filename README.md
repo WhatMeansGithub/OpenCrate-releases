@@ -145,9 +145,16 @@ that in Settings → General.
   playlist's **+**), or drag files and folders in from Finder or Explorer
   (folders become playlists). Drop them on an OpenCrate playlist or on
   the OpenCrate library in the sidebar (the row lights up), or anywhere
-  else to add them to the playlist that's open. For now these tracks can be browsed, searched and played;
-  analysing them and sending them to Rekordbox, Engine DJ or a USB stick
-  comes next.
+  else to add them to the playlist that's open. Tracks in OpenCrate's
+  library are **analysed in the background**, one at a time (the status
+  bar shows "Analysing 3 of 12"): OpenCrate listens to each track and
+  fills in its tempo and a beatgrid (one steady grid, with the bars
+  marked). Right-click a track → **Analyze** to do it again. It's an
+  estimate: check the grid in the player, and fix it there if it's off.
+  Tracks from your Rekordbox or Engine DJ library that you drag into an
+  OpenCrate playlist are copied with their details, not their cues and
+  grids. Sending OpenCrate's tracks on to Rekordbox, Engine DJ or a USB
+  stick comes next.
 - **Devices:** a plugged-in USB stick with a Rekordbox export or an Engine
   DJ library shows under **Devices** in the sidebar, with its free space
   and an **⏏** button to eject it. Browse its Rekordbox and Engine DJ
