@@ -19,11 +19,12 @@ files so they work on every player.
 4. [Library: browsing your tracks](#library-browsing-your-tracks)
 5. [Sync: Rekordbox to Engine DJ](#sync-rekordbox-to-engine-dj)
 6. [Tidy: cleaning up your library](#tidy-cleaning-up-your-library)
-7. [Backups: undoing changes](#backups-undoing-changes)
-8. [Settings](#settings)
-9. [The status bar](#the-status-bar)
-10. [Not in OpenCrate yet](#not-in-krate-yet)
-11. [Reporting problems](#reporting-problems)
+7. [Players: settings on a USB stick](#players-settings-on-a-usb-stick)
+8. [Backups: undoing changes](#backups-undoing-changes)
+9. [Settings](#settings)
+10. [The status bar](#the-status-bar)
+11. [Not in OpenCrate yet](#not-in-krate-yet)
+12. [Reporting problems](#reporting-problems)
 
 ---
 
@@ -153,7 +154,7 @@ that in Settings → General.
   library are **analysed in the background**, one at a time (the status
   bar shows "Analysing 3 of 12", with an **✕** to stop it after the
   track in progress; tracks left over stay unanalysed until you pick
-  Analyze): OpenCrate listens to each track and
+  Analyze; Settings → Analysis can turn automatic analysis off): OpenCrate listens to each track and
   fills in its tempo, a beatgrid (one steady grid, with the bars
   marked) and its musical key (only where the file has no key of its
   own; a key from the file's tags is never replaced) and the small
@@ -481,8 +482,10 @@ ones such as the CDJ-3000X, XDJ-AZ and OPUS-QUAD) and/or **Engine DJ**
    the stick already: plug the stick in with Engine DJ open once, so it
    sets one up.
 4. **Preview** shows how many playlists and tracks go on the stick, and
-   tracks left out (for example ones Rekordbox hasn't analysed). Nothing
-   is written yet: the button then changes to **Export to *stick***.
+   tracks left out (for example files missing on the computer). A track
+   Rekordbox hasn't analysed, or whose beatgrid you've changed since,
+   still goes on the stick: OpenCrate makes its waveform and grid from the
+   audio and the grid. Nothing is written yet: the button then changes to **Export to *stick***.
 5. **Export to *stick*** (Engine DJ must be closed for an Engine export).
    The bar at the bottom shows how far it is in percent, the track just
    written (copied, or already on the stick) and the playlists it's in,
@@ -685,6 +688,92 @@ Nothing on the stick is changed, except junk you choose to delete.
 
 ---
 
+## Players: settings on a USB stick
+
+The **Players** tab edits what a DJ player takes from a USB stick, the
+same settings Rekordbox calls **My Settings** (Preferences → DJ System).
+At the top, each plugged-in stick is a button, next to **This computer**
+(Rekordbox's own copy, and Engine DJ's profiles); click one to see its
+settings, then choose **Rekordbox** or **Engine DJ** below. The settings are on
+three pages, as Rekordbox groups them: **Player** (quantize, auto cue,
+sync, time mode, tempo range, jog, display and brightness, language and
+more), **Mixer** (fader curves, headphones, talk-over, MIDI) and
+**General** (overview waveform, key display).
+
+- Click a choice to change a setting; changed ones are marked. **Save**
+  writes them. The old settings files are copied to OpenCrate's backups
+  first (in `player-settings`), and only the settings you changed are
+  touched.
+- **Keep Rekordbox's own settings the same** (on by default): when you
+  save a stick's settings, Rekordbox's own My Settings on this computer get
+  the same values, so Rekordbox doesn't ask "Do you want to update My
+  Settings on the device?" when you plug the stick in. This needs Rekordbox
+  closed; if it's open, the stick is saved and OpenCrate says Rekordbox's
+  own weren't changed. A change you make in Rekordbox itself shows up here:
+  a stick whose settings differ from Rekordbox's offers **Use Rekordbox's
+  settings**.
+- **Reset** gives the stick (or Rekordbox) Rekordbox's own default
+  settings. **Copy from** another plugged-in stick takes over its
+  settings. If a stick has no settings files yet, **Create** makes them.
+- A settings file OpenCrate doesn't recognise (damaged, or from a newer
+  Rekordbox) is never overwritten: OpenCrate says so instead.
+
+For a USB stick there are four more pages, Rekordbox's **Category**,
+**Sort**, **Column** and **Color** preferences:
+
+- **Category** and **Sort:** an *active* list (in the order a player shows
+  it) and an *inactive* list. Select an entry, then use the arrows to make
+  it active or inactive and **Up** / **Down** to move it. Rekordbox keeps
+  some entries (Track, Playlist, History, Search, Folder; Default and
+  Alphabet in Sort) always on.
+- **Column:** the item a player shows next to the track name (newer players
+  only).
+- **Color:** the names of the eight track colours.
+
+**Save** here changes both of the stick's Rekordbox databases (the older
+one that CDJ-2000 style players read and the newer one) in step, after a
+backup. Rekordbox must be closed. Don't change these in Rekordbox itself
+on a stick OpenCrate exported: Rekordbox 6.8.7 damaged such a stick when a
+category was added.
+
+### Engine DJ profile
+
+Choose a stick, then **Engine DJ**, to edit the profile on an Engine DJ
+stick (Denon, Numark and other Engine players): sync mode, quantize, speed
+range, track end warning, waveform style, player colours and the rest of
+what Engine DJ's own preferences hold. A stick keeps **one** profile, with
+no name; Engine DJ's named profiles live on this computer.
+
+- Choosing a stick opens **the profile that is on the stick** (first in
+  the **Profile** menu, under the stick's name; it says "same as …" when
+  its settings equal one of Engine DJ's profiles). The menu's other
+  entries are Engine DJ's profiles from this computer: **picking one puts
+  it on the stick straight away** (the stick's old profile is backed up
+  first).
+- Click a choice to change a setting, then **Save**: that changes the
+  stick's own profile only. The old file is backed up first (in
+  `player-settings`). Engine DJ must be closed.
+- **Save as profile** stores the stick's settings as a new named profile
+  for Engine DJ on this computer. An existing profile is never overwritten.
+- The stick's own profile is listed first, under the stick's name, as in
+  Engine DJ.
+- Under **This computer** you can edit Engine DJ's own profiles, and each
+  plugged-in stick's profile, the same way (with a backup). Handy for trying a change: edit one, pick it in
+  Engine DJ and see what it does, before touching a stick.
+- **Nudge Sensitivity** and **Track End Warning** are sliders. The page
+  has OpenCrate's own look; **Settings → Appearance → Engine DJ profile
+  settings** can switch it to a copy of Engine DJ's preferences window
+  (flat cells, the chosen one green and underlined).
+- **Deck colors:** pick the **Device** (Players, 2 Deck Consoles or 4 Deck
+  Consoles), then click a coloured cell in the grid (a player's Layer A or
+  B, or a console deck) to open Engine DJ's colour wheel and click one of
+  its eight colours. Changed cells get an outline until you save.
+- The settings are grouped and named as in Engine DJ's own profile window
+  (Playback, Cues/Loops, Display, Safety, Library, Deck colors).  A profile file OpenCrate doesn't
+  recognise is never overwritten.
+
+---
+
 ## Backups: undoing changes
 
 ### Libraries
@@ -732,6 +821,12 @@ Settings are grouped in a sidebar:
 - **General → DJ libraries:** the libraries you chose not to be asked
   about at startup. **Ask again** offers one again the next time OpenCrate
   starts.
+- **Analysis:** **Analyse tracks automatically** (on by default) decides
+  whether tracks you add to OpenCrate are analysed by themselves. Turn
+  it off to analyse only what you pick with right-click → **Analyze**.
+  **Wait for the power adapter** pauses automatic analysis while the
+  computer runs on battery and carries on once it's plugged in. Analyze
+  always works, and the ✕ in the status bar stops a running analysis.
 - **Appearance → Theme:** Dark, Light, Gray, High contrast or Classic
   Winamp.
 - **Appearance → Track list size:** a slider from smaller (more tracks on
