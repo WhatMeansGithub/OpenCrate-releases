@@ -135,7 +135,11 @@ that in Settings → General.
   one of its playlists (the track is copied into OpenCrate's library,
   without its cues and grid). Inside OpenCrate's library you can drag tracks onto its playlists,
   remove them from a playlist (**Remove from playlist**, ⌫) and drag them
-  to reorder, as in your DJ libraries. MP3, M4A, WAV, AIFF and FLAC files
+  to reorder, as in your DJ libraries. To take a track out of OpenCrate
+  altogether, select it in the library and press ⌫ (or right-click →
+  **Remove from library**); OpenCrate asks first. It also leaves every
+  OpenCrate playlist; the music file on your disk is never deleted.
+  MP3, M4A, WAV, AIFF and FLAC files
   are added; title, artist, album, genre, year, length and bitrate are
   read from the file's tags (a file with unreadable tags still appears,
   named after the file). The files themselves are never changed or moved,
@@ -147,10 +151,18 @@ that in Settings → General.
   the OpenCrate library in the sidebar (the row lights up), or anywhere
   else to add them to the playlist that's open. Tracks in OpenCrate's
   library are **analysed in the background**, one at a time (the status
-  bar shows "Analysing 3 of 12"): OpenCrate listens to each track and
-  fills in its tempo and a beatgrid (one steady grid, with the bars
-  marked). Right-click a track → **Analyze** to do it again. It's an
-  estimate: check the grid in the player, and fix it there if it's off.
+  bar shows "Analysing 3 of 12", with an **✕** to stop it after the
+  track in progress; tracks left over stay unanalysed until you pick
+  Analyze): OpenCrate listens to each track and
+  fills in its tempo, a beatgrid (one steady grid, with the bars
+  marked) and its musical key (only where the file has no key of its
+  own; a key from the file's tags is never replaced) and the small
+  waveform shown behind its title in the track list. Right-click a
+  track → **Analyze** to do it again. It's an estimate: check the grid
+  in the player, and fix it there if it's off. The key is an estimate
+  too: it matches Rekordbox's on about six tracks in ten, and when it
+  differs it is often a fifth or a relative key away, so check it by
+  ear.
   Tracks from your Rekordbox or Engine DJ library that you drag into an
   OpenCrate playlist are copied with their details, not their cues and
   grids. Sending OpenCrate's tracks on to Rekordbox, Engine DJ or a USB
@@ -164,7 +176,8 @@ that in Settings → General.
   A stick leaves the sidebar when it's ejected or unplugged.
 - **Selecting tracks:** click a track to select it, **⌘-click** (Ctrl-click
   on Windows) to add or remove one, **Shift-click** to select everything
-  between it and the last one you clicked. Ratings keys, **Remove from
+  between it and the last one you clicked, **⌘A** (Ctrl+A) to select
+  every track in the list. Ratings keys, **Remove from
   playlist**, dragging onto a playlist and dragging to reorder work on all
   selected tracks.
 - **Played tracks:** a track you've played in OpenCrate's player shows in
@@ -724,6 +737,18 @@ Settings are grouped in a sidebar:
 - **Appearance → Track list size:** a slider from smaller (more tracks on
   screen) to larger, with a preview; the list follows as you drag.
   **Reset** goes back to the standard size.
+- **Appearance → Track list waveforms:** the small overview waveform of
+  each track. **Where:** faint behind the title (the default) or in its
+  own **Waveform** column (move, resize or hide it like the other
+  columns). **Colours:** **Blue**, **Tri-band** (bass, mids and highs
+  layered in blue, orange and white) or **RGB** (red = bass, green =
+  mids, blue = highs), the same looks as the deck waveforms. Tri-band
+  and RGB need the track's frequency analysis, which Rekordbox, Engine
+  DJ and OpenCrate's own analysis provide; a track without it is drawn
+  blue. **Shape:** **Full** (mirrored around the middle) or **Half**
+  (one side, rising from the bottom). The sample rows show your choice
+  at once. After updating, OpenCrate reads your Rekordbox and Engine DJ
+  libraries once more to pick up the frequency data.
 - **Appearance → Album art:** show or hide covers in the track list and on
   the decks. OpenCrate keeps small copies of the covers (in your computer's
   cache folder), so they appear right away instead of being read from the
