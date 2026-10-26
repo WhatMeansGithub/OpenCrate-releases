@@ -170,11 +170,24 @@ that in Settings → General.
   stick comes next.
 - **Devices:** a plugged-in USB stick with a Rekordbox export or an Engine
   DJ library shows under **Devices** in the sidebar, with its free space
-  and an **⏏** button to eject it. Browse its Rekordbox and Engine DJ
-  playlists and tracks like a library. Sticks are read-only here (change
+  and an **⏏** button to eject it. Browse its libraries like any other.
+  As in Rekordbox, a stick's two Rekordbox databases are listed
+  separately: **Rekordbox OneLibrary** (read by newer players) and
+  **Rekordbox Device Library** (the older format, read by CDJ-2000 style
+  players), next to its **Engine DJ** library. They can differ (Rekordbox 7
+  sometimes leaves playlists out of the older one), so you can see what
+  each player will find. Sticks are read-only here (change
   your library on the computer, then export); to bring a stick's playlists
   into your library, see [Importing from a USB stick](#importing-from-a-usb-stick).
   A stick leaves the sidebar when it's ejected or unplugged.
+  **Adding a stick's tracks to one of OpenCrate's own playlists** (drag
+  them there, or Add to playlist) **copies their audio files** into your
+  import folder (Settings → General → Music from USB sticks; by default an
+  `OpenCrate` folder inside your Music folder), so they're still yours when
+  the stick is unplugged. A file with the same name and size is reused, a
+  different file with the same name is kept next to it, and nothing is
+  overwritten. Tracks that are already on your computer are never copied or
+  moved: they stay where they are.
 - **Selecting tracks:** click a track to select it, **⌘-click** (Ctrl-click
   on Windows) to add or remove one, **Shift-click** to select everything
   between it and the last one you clicked, **⌘A** (Ctrl+A) to select
@@ -519,23 +532,91 @@ again and takes a while; to update a few playlists, tick just those.
 example ones made on another computer or on the players) into Rekordbox's
 or Engine DJ's library on this computer.
 
-1. Choose the stick in **Drives**. If it has both a Rekordbox export and
-   an Engine DJ library, pick which one to read.
-2. Tick the playlists to import (or **All playlists**), and choose the library to **Import
+1. Choose the stick in **Drives**. All of its libraries (Rekordbox
+   OneLibrary, Rekordbox Device Library, Engine DJ) are ticked at the top
+   of the playlist list; untick one to leave it out. They are read
+   together: the same song in two libraries counts once, and a playlist
+   that only some libraries have is marked with their names.
+2. Under the list, **Songs on the stick** says how many songs there are,
+   how many OpenCrate has already, how many are new but already on this
+   computer (they stay where they are) and how many have to be copied (and
+   how much space that takes). Songs are recognised by their audio (the
+   same file size and length, else the same artist, title and length), not
+   by file names, which players shorten. If the stick holds some songs more
+   than once (repeated exports can leave copies), a warning lists them;
+   each is imported once and the copies are left on the stick.
+3. Tick the playlists to import (or **All playlists**), and choose the library to **Import
    into**.
-3. **Preview** lists each playlist: **new** (with how many tracks), **+N
+4. **Preview** lists each playlist: **new** (with how many tracks), **+N
    tracks** for one your library has already, or **up to date**, and
    tracks your library doesn't have.
-4. **Import into *library*** (that app must be closed).
+5. **Import into *library*** (that app must be closed).
 
-The stick's tracks are matched to the files already in your library (by
-file size, else artist, title and length); nothing is copied from the
-stick, and tracks your library doesn't have are left out. A playlist your
+Playlists from the stick's libraries are matched to the songs already in
+your library, by the same rules. **Into OpenCrate's own
+library**, tracks only the stick has are **copied from the stick into your
+import folder** (Settings → General → Music from USB sticks) and added, so
+you get the playlists *and* the audio; a song a library on this computer
+already has is used where it is and not copied. Into Rekordbox's or Engine DJ's library nothing is copied from
+the stick, and tracks that library doesn't have are left out. A playlist your
 library has already (also in another folder, e.g. "Imported Playlists")
 gets only the tracks it lacks; new ones are created in the folder of the
 same name, or at the same place as on the stick. Nothing is removed. The
 library is backed up first, and if it's your primary library, your other
 libraries get the playlists too. Importing is never done automatically.
+
+**Cues, loops, beatgrids and track info.** Rekordbox, Engine DJ and every
+stick library can each hold their own cues, loops and beatgrid for the same
+song. When you import into OpenCrate, it **keeps every one of them** next to
+the song, remembered with where it came from (for example "TEILE STICK ·
+OneLibrary" or "Engine DJ (this computer)"); nothing is replaced or thrown
+away. Which one OpenCrate uses comes from your choices in **Settings →
+General → Cues, grids and track info**: Rekordbox's, Engine DJ's or none for
+cues and loops; Rekordbox's, Engine DJ's or OpenCrate's own analysis for the
+beatgrid; and whether the stick's version or the one on this computer wins
+when a song has both. The choice is made only for songs that don't have one
+yet, so it never overrides one you made. After changing those settings, press **Update cues and grids only** (next to Preview, when importing into OpenCrate) to apply them to songs OpenCrate already has; it applies your settings to every matching song **in the playlists you ticked** (all songs if none are ticked), replacing earlier choices, including songs you had OpenCrate analyse. It imports no playlists and copies no files. A song that uses Rekordbox's or Engine DJ's grid isn't analysed automatically. If you choose **Analyze** on such a song yourself, OpenCrate analyses it and uses its own grid (the other grid is still kept). An import won't take that back, but **Update cues and grids only** does. Only data that belongs to the very
+same song is kept; Engine DJ's positions are shifted to match Rekordbox's
+timeline, and an MP3 that can't be measured is left out and reported.
+
+### Choosing a song's cues and grid
+
+For a song in OpenCrate's own library, right-click → **Cues & grid versions…**
+shows every version OpenCrate holds: OpenCrate's own, Rekordbox's, Engine
+DJ's, and each stick's (with a summary such as "3 hot cues · 1 loop" or "128.00
+BPM · first beat at 0.240 s"). Pick one for the cues and loops and one for the
+beatgrid; it applies at once and you can switch back any time. Nothing is
+deleted. If you edited the song's cues or grid in OpenCrate's player, those
+edits come before any library's version; choosing a library's version asks
+first and forgets those edits. The track info (tempo, key, rating) of each
+library is listed to look at.
+
+**Several songs at once.** Select tracks (for example everything in a
+playlist: click the list, then ⌘A / Ctrl+A) and right-click → **Cues & grid
+versions…**. Choose, separately for cues and loops and for the beatgrid, to use
+Rekordbox's, Engine DJ's or OpenCrate's own, and whose copy wins when a song has
+both a stick's and this computer's. Each choice shows how many of the songs have
+that version; songs without it stay as they are. Songs you edited in the player
+are left alone unless you tick the box that lets their edits be forgotten.
+
+**Which one is in use** shows in the **Cues/Grid** column of the track list
+(right-click the column headers to show or hide it): **RB** for Rekordbox's,
+**EDJ** for Engine DJ's, **OC** for OpenCrate's own. One tag means the cues and
+the grid come from the same place, two ("RB/OC") mean cues/grid. Hover a cell
+for the full name, such as the stick it comes from.
+
+### Merging duplicate songs
+
+Right-click → **Merge duplicate songs…** lists songs OpenCrate's own library
+holds more than once (for example the same song added from two sticks).
+Songs that are the very same file are ticked; ones with the same artist and
+title but clearly different files are not, so you can look first. For each,
+the radio button marks the copy to keep (by default one whose file is there,
+then the one in most playlists). Merging puts the kept song in every playlist
+the copies were in, keeps every version of their cues and grids, and removes
+the other tracks from OpenCrate's library. **Audio files are never deleted or
+moved.** Settings → General → Cues, grids and track info says whose cues and
+grid a merged song uses.
 
 ### Saving cue and grid edits
 
