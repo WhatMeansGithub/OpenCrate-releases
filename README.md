@@ -526,6 +526,38 @@ the stick are left alone. Exporting is never done automatically. For now
 it works from Rekordbox's own library (not Engine DJ or an XML export). Exporting **All playlists** checks every playlist and track on the stick
 again and takes a while; to update a few playlists, tick just those.
 
+### Importing libraries on this computer into OpenCrate
+
+**Sync → Libraries**: choose **OpenCrate** under *To*. *From* then lists the
+libraries found on this computer (Rekordbox, Engine DJ); tick one or both. With
+one library you can import the full library or just some playlists; with
+several, the whole of each comes in. **Preview changes**, then **Import into
+OpenCrate**. This is a one-time import by hand, and it only adds: songs
+OpenCrate doesn't have yet, and playlists (playlists OpenCrate already has get
+only the songs they lack). Nothing in OpenCrate is removed and the other
+libraries are only read.
+
+**Audio files are never copied or moved** by this import: the songs point at
+the files where they already are. (Only music from USB sticks is copied, into
+the import folder, because it would vanish with the stick.)
+
+OpenCrate **always keeps every library's cues, loops, grids and info for each
+song**, so you can switch between Rekordbox's and Engine DJ's later (see
+*Choosing a song's cues and grid*). The import screen asks three things:
+
+- **Which cues, loops and beatgrids does a song play with?** *The ones I prefer
+  in Settings* (the default) uses your Settings → General → Cues, grids and track
+  info; *Don't pick any* leaves songs with OpenCrate's own until you choose. Songs
+  that already have a pick keep it, unless you tick *Also change songs that
+  already have a pick*. Songs you edited in OpenCrate's player keep their edits.
+- **Fill in blank tempo, key and ratings** (on): only empty ones, never
+  overwritten. The first library you tick fills first.
+- **Also import Rekordbox's built-in sampler sounds** (on; Rekordbox only):
+  Rekordbox keeps its own sampler sounds in its collection (its *Sampler*
+  folder); untick to skip them.
+
+Songs that use another library's grid aren't analysed by OpenCrate.
+
 ### Importing from a USB stick
 
 **Sync → USB stick → Import from stick** brings a stick's playlists (for
