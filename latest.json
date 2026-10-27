@@ -1,11 +1,11 @@
 {
-  "version": "0.1.20",
-  "notes": "\n### New\n- **Import Rekordbox and Engine DJ libraries into OpenCrate.** Sync →\n  Libraries: *To* OpenCrate, then tick the libraries on this computer. Adds the\n  songs and playlists OpenCrate doesn't have (where their files are: nothing is\n  copied or moved) and keeps every library's cues, loops, grid and info for each\n  song, so you can switch between them. Which one songs use follows your\n  Settings; tempo, key and rating are filled in where empty; Rekordbox's own\n  sampler files can be left out. Only adds; the libraries aren't changed.\n",
-  "pub_date": "2026-10-27T00:06:15Z",
+  "version": "0.1.21",
+  "notes": "\n### New\n- **Use OpenCrate as your main library** (Settings → Sync → Main library).\n  OpenCrate copies your whole Rekordbox and Engine DJ libraries into its own\n  library and remembers which song is which in each, as the first step towards\n  keeping all your libraries in step from OpenCrate. Your libraries aren't\n  changed.\n\n### Fixed\n- Star ratings now save in OpenCrate's own library (they weren't kept\n  before, and the rating reverted).\n- The song count and track list for OpenCrate's own library now update right\n  after an import or sync, not only after a restart.\n- Exporting to a USB stick now stops, instead of removing songs, when a playlist\n  already on the stick has songs that aren't in this computer's library. It\n  names those playlists; import them from the stick first, then export again.\n",
+  "pub_date": "2026-10-27T23:18:59Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/WhatMeansGithub/OpenCrate-releases/releases/download/v0.1.20-alpha/OpenCrate_aarch64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWgyZy9xODJkblJhYXR2N2pKMW9va3kzWjJ6NS9kbUJSN2J4Z3ZSbDN2R2w4cHJCdjZtMmhkZ3hFK3ZWRzJqd0lEUjhCVjZYTlozekxITGcvQUgvTEFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDU5NTc1CWZpbGU6T3BlbkNyYXRlLmFwcC50YXIuZ3oJdmVyc2lvbjowLjEuMjAKY01lR2RvTEUrRUFsa0JlZ29WQVIwcHB6QzRURE1MY2VOSThNS2o1clVMK3FqTU1kUkJadm80WGs2YThURk5mWlNGbXV4YkVpaHBSZ0QvZkFVc2FzREE9PQo="
+      "url": "https://github.com/WhatMeansGithub/OpenCrate-releases/releases/download/v0.1.21-alpha/OpenCrate_aarch64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWxTSFFZRlFGYkxNN29WUHJBZlJzaHQ3REhROFFGYWFTcUh3YXM5Qm9xVlRYaVRySnVzY1RiZmcxSG1HWTBzbTNRekE5K3F2VWs2OFoyTUt0RURtZFFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMTQzMTM5CWZpbGU6T3BlbkNyYXRlLmFwcC50YXIuZ3oJdmVyc2lvbjowLjEuMjEKOVVrVG10d1FKL2ZubVdtM3J0Mkl1L0Y3UmNiUkU0OHJtaDFyaldoR1JSR2U0T1ZqV2RTL3FoaHFZUzZvSUVTandzUEtEUmpKQUppM3VRdmx3T3hQQXc9PQo="
     }
   }
 }

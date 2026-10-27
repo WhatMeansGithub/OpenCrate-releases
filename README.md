@@ -210,7 +210,9 @@ that in Settings → General.
   ratings you set quickly one after another are saved together), and
   that app must be closed. Your other libraries get it when you sync, or
   straight away if the library you're viewing is the **primary library**
-  (Settings → Sync).
+  (Settings → Sync). In OpenCrate's own library the rating is kept in
+  OpenCrate (no DJ app is involved, so nothing needs to be closed); it isn't
+  passed on to Rekordbox or Engine DJ yet.
 - **Playlists** (Rekordbox's own library and Engine DJ): hover over a
   library, folder or playlist in the sidebar and click **+** for **New
   playlist…** or **New folder…** (in a library or folder it goes inside;
@@ -997,6 +999,16 @@ Settings are grouped in a sidebar:
   loaded tracks stay where they were, with their tempo, EQ and sync. If the
   chosen device is unplugged, OpenCrate uses the system default until it's
   back. **Refresh list** looks for newly connected devices.
+- **Sync → Main library:** **Use OpenCrate as my main library** copies your
+  whole Rekordbox and Engine DJ libraries on this computer (the ones
+  OpenCrate finds) into OpenCrate's own library: every song (where its file is;
+  nothing is copied or moved), every playlist, and each library's cues, loops,
+  grids and track info, kept as versions your Settings defaults choose from
+  (Rekordbox's sampler files are left out). It also remembers which song in
+  OpenCrate is which track in each library, and each library's own id.
+  OpenCrate asks first and only reads your libraries; nothing in them changes.
+  You can do it again later: songs already there aren't added twice. Keeping
+  the libraries in step with each other from OpenCrate comes later.
 - **Sync → Primary library:** edits you make in OpenCrate (ratings,
   playlists, cues and grids) in the primary library also go straight into
   your other libraries (one whose app is open gets them when it closes or
