@@ -234,6 +234,16 @@ that in Settings → General.
   show at once and are saved in the background, in order; if one can't be
   saved (e.g. the app is open), OpenCrate says so and puts the playlists back
   as they are in the library.
+- **Editing a track's info:** click a track to select it, then click a text cell of it again (title, artist, album, genre, label or year) to edit it right in the list: **Enter** saves, **Esc** cancels. Or right-click a track → **Edit info…** to
+  change its title, artist, album, genre, label, remixer, year or comment.
+  Select several tracks first to set a field on all of them at once; a field
+  you don't touch keeps each track's own value ("Multiple values" shows
+  where they differ). The change is written into the audio file's tags, into
+  Engine DJ's library and (if Settings allow it) Rekordbox's for the tracks
+  they have, and into OpenCrate's own library. Each file and library is
+  backed up first, and **Backups** can undo it. Rekordbox and Engine DJ must
+  be closed. Songs from a USB stick or a Rekordbox XML export can't be
+  edited (they're copies): edit the song on this computer, then export again.
 - **Format** shows the file type (MP3, AIFF, WAV, FLAC, …). **Bitrate** and
   **Label** are hidden at first; turn them on with a right-click on the
   headers.
@@ -423,7 +433,11 @@ don't need a sync: they're saved into your libraries on their own.
      slots are filled.
    - **Keep duplicate cues:** keep cues at the same position as an existing
      one.
-   - **Lock beatgrids** so Engine DJ doesn't re-analyse them.
+   - **Lock beatgrids** so Engine DJ keeps your grids.
+   Songs OpenCrate adds also get Engine DJ's overview waveform and count as
+   analysed, so Engine DJ (and Denon players) don't analyse them again. Songs
+   already in Engine DJ that lack one get it too; the preview says how many.
+   The waveform is OpenCrate's own rendering, close to Engine DJ's.
 5. Click **Preview changes**. OpenCrate lists exactly which tracks and
    playlists will be added, changed or removed. Nothing has been written
    yet.
@@ -481,8 +495,9 @@ next sync; covers Engine DJ already has stay.
 
 ### Exporting to a USB stick
 
-**Sync → USB stick → Export to stick** copies playlists from Rekordbox's
-library on this computer to a stick, with the music, cues, loops and
+**Sync → USB stick → Export to stick** copies playlists from OpenCrate's
+own library (the default; pick **Rekordbox** above the list to use
+Rekordbox's library on this computer instead) to a stick, with the music, cues, loops and
 beatgrids, for **Rekordbox** (Pioneer players: both of Rekordbox's stick
 formats, for older players such as the CDJ-2000NXS2 and XDJ-XZ and newer
 ones such as the CDJ-3000X, XDJ-AZ and OPUS-QUAD) and/or **Engine DJ**
@@ -493,9 +508,16 @@ ones such as the CDJ-3000X, XDJ-AZ and OPUS-QUAD) and/or **Engine DJ**
    music that is, in orange if it won't fit on the stick.
 2. Choose the stick in **Drives** on the right (each shows its free space;
    **↻** looks for drives again).
-3. Tick **Rekordbox**, **Engine DJ** or both. Engine DJ needs a library on
-   the stick already: plug the stick in with Engine DJ open once, so it
-   sets one up.
+3. Tick **Rekordbox**, **Engine DJ** or both. A stick without an Engine
+   DJ library gets a new, empty one when you export (so a completely fresh
+   stick works, also on a computer without Engine DJ). If you'd rather let
+   Engine DJ set the library up, plug the stick in with Engine DJ open once
+   first. With Engine DJ ticked, **Player preferences (Engine DJ)** below
+   chooses what the stick's player settings (its `user.profile`) do:
+   **Keep the stick's own** (the default: an export never changes them) or
+   **Use "<name>" from this computer**, which puts that profile's settings on
+   the stick (the stick's own file is backed up first, and Engine DJ must be
+   closed).
 4. **Preview** shows how many playlists and tracks go on the stick, and
    tracks left out (for example files missing on the computer). A track
    Rekordbox hasn't analysed, or whose beatgrid you've changed since,
@@ -507,6 +529,12 @@ ones such as the CDJ-3000X, XDJ-AZ and OPUS-QUAD) and/or **Engine DJ**
    the transfer speed, how much has been written and the time left.
 6. Click **⏏** next to the stick and unplug it once OpenCrate says it's
    ejected.
+
+   When exporting from OpenCrate, the Preview also warns about songs in the
+   playlists that haven't been analysed yet (they'd go on the stick without a
+   beatgrid) and offers **Analyse now**. By default **Export** analyses them
+   first and waits; Settings → Sync → *Wait for analysis before exporting to a
+   stick* turns that off.
 
 The stick always gets your library as it is on this computer, marked
 as your Rekordbox library's: Rekordbox recognises the tracks as its own,
