@@ -19,12 +19,13 @@ files so they work on every player.
 4. [Library: browsing your tracks](#library-browsing-your-tracks)
 5. [Sync: Rekordbox to Engine DJ](#sync-rekordbox-to-engine-dj)
 6. [Tidy: cleaning up your library](#tidy-cleaning-up-your-library)
-7. [Players: settings on a USB stick](#players-settings-on-a-usb-stick)
-8. [Backups: undoing changes](#backups-undoing-changes)
-9. [Settings](#settings)
-10. [The status bar](#the-status-bar)
-11. [Not in OpenCrate yet](#not-in-krate-yet)
-12. [Reporting problems](#reporting-problems)
+7. [Player Preferences: settings on a USB stick](#player-preferences-settings-on-a-usb-stick)
+8. [Remote library: players browse OpenCrate over the network](#remote-library-players-browse-opencrate-over-the-network)
+9. [Backups: undoing changes](#backups-undoing-changes)
+10. [Settings](#settings)
+11. [The status bar](#the-status-bar)
+12. [Not in OpenCrate yet](#not-in-krate-yet)
+13. [Reporting problems](#reporting-problems)
 
 ---
 
@@ -831,9 +832,42 @@ Nothing on the stick is changed, except junk you choose to delete.
 
 ---
 
-## Players: settings on a USB stick
+## Remote library: players browse OpenCrate over the network
 
-The **Players** tab edits what a DJ player takes from a USB stick, the
+**Settings → Remote library** lets Denon / Engine OS players (SC6000,
+Prime) on the same Wi-Fi or network browse and play the songs in OpenCrate's
+own library, the way Engine DJ's "Engine Remote Library" does, without a USB
+stick. Turn it on, then on the player open the computer's library; OpenCrate
+asks "Allow this player?" each time a player connects. Only
+songs in OpenCrate's own library are shared, and only with players you allow.
+
+- It works only while **Engine DJ is closed** (both would use the same
+  network ports); OpenCrate starts sharing by itself when Engine DJ closes.
+- The player shows playlists, the whole collection, search, artwork, and
+  plays the music from your computer; the cues, loops and grid it shows are
+  the ones OpenCrate uses for the song.
+- The player lists OpenCrate by a short name such as "MacBook of Dennis"
+  (your computer's type and name), so it fits in the player's source list.
+- A change you make in OpenCrate while a player is connected (a new title,
+  a song added to a playlist, a cue you move) shows on the player within a
+  second or two, and a cue you set or remove on the player shows at once in
+  a deck that has the song loaded. Hot cues you set in OpenCrate's deck are named "Cue 1", "Cue 2"... and saved loops "Loop 3" (by pad number) on the first pad no hot cue uses, since Rekordbox shares its 8 pads between hot cues and loops; saved loops reach the player and loops you save on the player come back.
+- **Cues and loops you set on the player are saved in OpenCrate** as your
+  own cues for that song (Versions keeps the cues it had before, so nothing
+  is lost). Only hot cues and loops are exchanged; memory cues stay in
+  OpenCrate. The player always sorts its list by title.
+- **Beatgrid edits** on the player are saved in OpenCrate the same way as
+  cues (the grid it had before stays in Versions), and a grid you edit in
+  OpenCrate's deck reaches the player.
+- **Star ratings** go one way: a rating you set in OpenCrate shows on the
+  player, but the player doesn't report ratings you change on it (checked
+  on an SC6000: nothing is sent), so change ratings in OpenCrate.
+- Other programs on the network can see the shared library only after you
+  allow their player; nothing is shared while the setting is off.
+
+## Player Preferences: settings on a USB stick
+
+The **Player Preferences** tab (in **Sync**, next to **Libraries** and **USB stick**) edits what a DJ player takes from a USB stick, the
 same settings Rekordbox calls **My Settings** (Preferences → DJ System).
 At the top, each plugged-in stick is a button, next to **This computer**
 (Rekordbox's own copy, and Engine DJ's profiles); click one to see its
@@ -972,6 +1006,11 @@ Settings are grouped in a sidebar:
   always works, and the ✕ in the status bar stops a running analysis.
 - **Appearance → Theme:** Dark, Light, Gray, High contrast or Classic
   Winamp.
+- **Appearance → Accent colour:** pick any colour (click the square for a
+  colour wheel, or one of the dots) for the highlight of the chosen tab,
+  buttons and selections, on top of the theme. "Use the theme's colour"
+  goes back. The menus inside Sync, Tidy and Backups are highlighted the
+  same faint way as the main tabs.
 - **Appearance → Track list size:** a slider from smaller (more tracks on
   screen) to larger, with a preview; the list follows as you drag.
   **Reset** goes back to the standard size.
