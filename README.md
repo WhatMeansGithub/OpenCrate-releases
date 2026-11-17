@@ -417,9 +417,21 @@ Sync has two parts, switched at the top: **Libraries** (described here)
 and **USB stick** (see below). Cue and grid edits from OpenCrate's player
 don't need a sync: they're saved into your libraries on their own.
 
-1. **From:** your Rekordbox library (or a Rekordbox XML export).
-   **To:** your Engine DJ library. OpenCrate finds both automatically; use
-   **Change…** to pick another location.
+1. **From:** your Rekordbox library (or a Rekordbox XML export), or
+   **OpenCrate**'s own library (its songs, playlists, and the cues, loops
+   and grids each song uses). **To:** your Engine DJ library. OpenCrate
+   finds both automatically; use **Change…** to pick another location.
+   From OpenCrate you can also choose **Rekordbox** as the target: songs
+   Rekordbox doesn't have are added (with their tags and rating, not
+   analysed: analyse them in Rekordbox for BPM, grid and waveform) and
+   OpenCrate's playlists are merged in. **Merge** only adds; **Rewrite**
+   makes Rekordbox's playlists match OpenCrate's exactly (playlists, folders
+   and entries OpenCrate lacks are removed; songs stay). The cue options
+   below don't apply, and the whole library is synced. Rekordbox
+   must be closed. Playlist changes you make later reach Rekordbox by
+   themselves (Settings → Sync → Passing changes on); with **Mirror
+   deletions too** switched on there, playlists and folders you delete in
+   OpenCrate are deleted in Rekordbox and Engine DJ as well.
 2. **What:** the **full library**, or only the **playlists** you tick.
 3. **Mode:**
    - **Merge** (recommended) adds what's missing and never removes anything
@@ -550,7 +562,12 @@ a new folder on the stick and the old copy stays there. For Rekordbox,
 playlists already on the stick that your library also has are exported
 again, so they stay (also when the stick keeps them in other folders);
 ones your library doesn't have leave the stick's Rekordbox list (the
-preview names them; their music stays on the stick). For Engine DJ,
+preview names them; their music stays on the stick). A playlist the stick
+keeps can also hold songs that aren't in your library any more (removed
+from it, or only ever on the stick): the preview says which playlists and
+how many, and the export waits until you tick **Remove them from the
+stick's playlists** (to keep them, import those playlists from the stick
+first, then export again). For Engine DJ,
 playlists and tracks are added, and nothing on the stick is removed. Each
 database is backed up before it's written, and your players' settings on
 the stick are left alone. Exporting is never done automatically. For now
@@ -1075,12 +1092,39 @@ Settings are grouped in a sidebar:
   OpenCrate is which track in each library, and each library's own id.
   OpenCrate asks first and only reads your libraries; nothing in them changes.
   You can do it again later: songs already there aren't added twice. Keeping
-  the libraries in step with each other from OpenCrate comes later.
+  the libraries in step with each other from OpenCrate has started: see
+  **Passing changes on** below.
+- **Sync → Passing changes on** (on by default once you've used OpenCrate as
+  your main library): playlist changes you make in OpenCrate's own library
+  (a new playlist or folder, renaming, moving, songs added or removed,
+  reordering) are written into Rekordbox and Engine DJ by themselves, with a
+  backup of each first. If one of them is open, the change waits and is
+  written when it closes (or when OpenCrate next starts); the message after
+  the edit says which. A playlist OpenCrate has and the other app doesn't is
+  created there. Star ratings, track info (title, artist, genre …), cues,
+  loops and beatgrids you change in OpenCrate go the same way, and wait the
+  same way when the app is open. **Deleting a playlist or folder is not passed
+  on** unless you also tick **Mirror deletions too**: then it is deleted in
+  Rekordbox and Engine DJ as well (never the songs, only playlists and
+  folders). Songs that aren't in Rekordbox or Engine DJ yet are not added by
+  this; use Sync → From OpenCrate for that. **What you change in Rekordbox
+  or Engine DJ comes back** into OpenCrate when you close that app (and when
+  OpenCrate starts): playlists (new ones, added songs, the order of songs, and
+  with Mirror deletions on, deleted ones and removed songs), star ratings,
+  track info, cues, loops and beatgrids, and songs you added there. The other
+  app then gets them from OpenCrate. Only changes made since OpenCrate first
+  looked are followed. If OpenCrate has a change of its own waiting for a
+  song, that change goes first and wins. Track info coming back changes
+  OpenCrate's copy and the other app, not the tags inside your audio files.
+  **Settings → Sync → Keep everything in step** switches passing on, taking back
+  and mirroring on or off together; each can also be set alone, so you can keep
+  your libraries apart and sync by hand instead.
 - **Sync → Primary library:** edits you make in OpenCrate (ratings,
   playlists, cues and grids) in the primary library also go straight into
   your other libraries (one whose app is open gets them when it closes or
   with the next sync). If you have both Rekordbox and Engine DJ, Rekordbox
-  is the primary library until you choose another. **None**: edits go
+  is the primary library until you choose another. Once you've used
+  OpenCrate as your main library, OpenCrate is the primary library. **None**: edits go
   only into the library you're viewing, and the others catch up when you
   sync.
   - **Sync automatically when Rekordbox closes** (off by default; with
