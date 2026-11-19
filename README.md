@@ -742,8 +742,13 @@ Tidy finds and fixes problems in track info and files: broken characters,
 spam in comments, "ALL CAPS" titles, files that crash imports on players,
 and so on. You always see every change before anything is written.
 
-**Library** (top left) chooses which library's tracks to check. **Changes
-go to** shows where fixes are written:
+**Library** chooses which tracks to check: **OpenCrate library** (the
+default: every song in OpenCrate's library once, wherever it came from) or
+**DJ app library…** (one Rekordbox or Engine DJ library on this computer).
+With OpenCrate's library, fixes are written into the audio files, into the
+other libraries ticked below, and into OpenCrate's own library, and Undo
+(in Backups) puts all of them back. **Changes go to** shows where fixes are
+written:
 
 - **Audio files** – always. Each file is backed up before it's changed.
 - **Rekordbox** – if ticked, the fixes go straight into Rekordbox's library
@@ -806,6 +811,98 @@ type a new name and click **Preview** to rename or merge them (e.g.
 "Deep house", "Deep-House" → "Deep House"). Leave the name empty to remove
 it from those tracks.
 
+### Artwork
+
+Finds and fixes cover art. By default it works on **OpenCrate's own library** (every song once,
+whichever app it came from); you can instead choose a Rekordbox or Engine DJ
+library on this computer (not Rekordbox XML, not USB sticks),
+and you see everything before anything is written.
+
+**Missing artwork.** OpenCrate lists tracks whose audio file has no cover
+picture and searches for one online by artist and title. For searching, the
+text is cleaned the same way Smart fixes cleans it: promo text, web
+addresses, track numbers, mix names and "feat." parts are ignored. Each
+candidate image is shown with a badge:
+
+- **Exact** (ticked for you): artist and title agree with the track,
+  ignoring capitals, accents and "&".
+- **Maybe** (not ticked): a different mix (including a plain title against a
+  named mix), extra artists, or the track has no artist to compare. Look at
+  the picture and tick it if it's right.
+
+The list is one scrollable list, in review order: **Maybe** first (the ones
+that need your eye), then **Exact**, then tracks where nothing was found.
+You can also sort alphabetically or by date added, ascending or descending.
+Results appear as the search goes, so you can start reviewing before it
+finishes, and **Stop** keeps what was found so far.
+
+Only the cover is ever changed: titles, artists and other tags are never
+touched. Tick **Also tick uncertain (Maybe) matches** to have those ticked
+for you too (you can still untick any row); Maybe rows stay at the top of the
+list. Click a row to see its cover large in the panel beside the list, with
+the other options under it. **Search for…** lets you look up a different
+artist and title for one track, for example the original of a bootleg, and
+use that cover while your own title stays as it is.
+
+When the track has an album tag, results from that album are listed first,
+because the same song can be on a single, an album and a compilation, each
+with its own cover.
+
+Covers are shrunk to at most 800 pixels as a baseline JPEG (the kind every
+player can read) and embedded as the front cover. Other pictures in the file
+are kept; for M4A files all covers are replaced. Each file is backed up
+first (tags and artwork, or the whole file, as set in
+[Settings](#settings)), and every change can be undone: the file goes back
+byte for byte.
+
+Engine DJ's library is updated too when **Keep Engine DJ's library in step**
+is on (Engine DJ must be closed). Rekordbox's own artwork is not written:
+select the changed tracks in Rekordbox and choose **Reload Tag** (one action
+for a whole selection) to show the new cover. **Save playlist for
+Rekordbox** (after applying) writes the changed tracks as a playlist you can
+import there and select all. This worked in a test for a track whose cover
+Rekordbox didn't have; whether Reload Tag also replaces a cover Rekordbox
+already shows isn't confirmed yet.
+
+To skip the checking, turn on **Add artwork found online without asking**
+in Settings. Then only Exact matches are added by themselves; Maybe ones
+still wait for you. Those are backed up and can be undone too.
+
+**Shrink artwork.** Lists the covers that Health flags (too big, PNG or
+unknown format, CMYK, progressive JPEG) and shows each one's size before and
+after, with the reason. Only the ones worth changing are ticked: covers that
+are too big and get smaller, covers in a format players can't show (CMYK,
+unknown), and progressive JPEGs or PNGs that shrink by at least a fifth.
+The rest stay listed but unticked, because turning a JPEG into a new JPEG
+loses a little quality and often doesn't make the file smaller; tick them
+yourself if you know a player of yours needs it. Next to the **Shrink**
+button OpenCrate shows how much space the ticked covers free up and how many
+of them will now show on every player (CMYK, PNG and progressive covers become
+plain JPEGs). Backups, undo and Engine DJ work as above.
+
+**Where it looks.** For each track OpenCrate tries, in this order, stopping
+as soon as one gives an Exact match: (1) your own computer: a `cover.jpg`
+(or `folder.jpg`, `front.jpg`...) in the track's folder, another track of the
+same album that already has a cover, and the cover Rekordbox or Engine DJ
+already keep for the track (Engine's is a small 256 px copy, marked "low
+resolution"); then (2) iTunes, (3) Deezer, (4) Discogs, if you added your
+own token, and (5) MusicBrainz with the Cover Art Archive. To keep lookups
+quick, only this computer, iTunes and Deezer are on to start with; Discogs
+and MusicBrainz are slower (one request a second each) and you switch them
+on yourself. Four tracks are looked up at the same time. After a lookup the
+screen shows what each source matched, so you can see which are worth
+having on. Each cover in the list says where it came from. Settings → Tidy &
+backups → Missing artwork lets you choose the sources, and add a **Discogs
+token** (create a free
+one at discogs.com → Settings → Developers → Generate new token; **Test
+token** checks it). Discogs is the best source for vinyl and underground
+releases. The token is only sent to Discogs.
+
+Searching the online services sends only the artist and title text (and the
+album, if the track has one); no files are uploaded. OpenCrate keeps to
+MusicBrainz's limit of one request per second, so a long list takes a
+while, and you need an internet connection.
+
 ### Health
 
 **Check all files** reads every audio file (nothing is changed) and reports
@@ -821,7 +918,30 @@ problems, grouped by how serious they are:
 - **Good to know:** very long paths, high sample rates (above 48 kHz /
   24-bit), missing artwork, progressive JPEG artwork, duplicate tracks.
 
-Click a group to see its tracks.
+Click a group to see its tracks. The check uses all your computer's cores, so
+a big library is read quickly.
+
+### Tag lookup
+
+Fills in **album, year, label and genre** from online services (iTunes, and
+Discogs and MusicBrainz if you switched them on in Settings → Tidy & backups
+→ Missing artwork; labels come only from Discogs). Choose which of the four
+fields to fill, then **Find tracks** (tracks missing at least one of them,
+unless you untick that) and **Look up online**. Results appear as they come
+in, in one list: tracks where only a likely match was found (**Maybe**) are
+at the top for you to check, sure matches (**Exact**) are ticked, and tracks
+with no match are at the end. Every change is shown field by field (for
+example "Genre: — → Dance"), and you can untick single fields.
+
+Rules that keep your library safe: **titles and artists are never touched**
+(they are what OpenCrate searches by) and **nothing is ever cleared**. By
+default only empty fields are filled; **Replace differing values too**
+also overwrites existing ones. For the year, OpenCrate uses the original
+release year, not a compilation's or a reissue's. Applying works like the
+other Tidy tabs: the audio files, Engine DJ and Rekordbox are updated (each
+backed up first), and Undo in Backups puts everything back. If a song is on
+several albums you see the one OpenCrate picked before you apply, and can
+untick it.
 
 ### USB stick
 
@@ -977,14 +1097,23 @@ how many tracks changed since. Select one to see exactly which tracks were
 added, removed or changed since then. **Restore** puts the library back
 exactly as it was; the current state is backed up first, so a restore can
 be undone too. The DJ app must be closed. OpenCrate keeps the 20 most recent
-backups per library.
+backups per library. Each backup shows its size (an Engine DJ library backup
+is typically 50 MB), and the tab shows how much space all backups use. To free
+space, tick backups and choose **Delete selected…**, or use **Keep newest…**
+to delete everything older than the newest few of a library. OpenCrate asks
+first and tells you how much space it frees. A deleted backup can't be
+restored or brought back.
 
 ### Tag changes
 
 Every time Tidy changed audio files: what changed in which file, and
 whether Rekordbox and Engine DJ were updated. **Undo these changes**
 restores the files exactly as they were (byte for byte) and puts the old
-values back in Rekordbox and Engine DJ.
+values back in Rekordbox and Engine DJ. Artwork changes (Tidy → Artwork) are
+listed here too; undo those in Tidy → Artwork. Each record shows how much disk
+space its backups use. **Delete selected…** (or **Delete undone records…**)
+removes records and their backups to free space, after asking; those changes
+can then no longer be undone.
 
 ---
 
@@ -1021,6 +1150,15 @@ Settings are grouped in a sidebar:
   **Wait for the power adapter** pauses automatic analysis while the
   computer runs on battery and carries on once it's plugged in. Analyze
   always works, and the ✕ in the status bar stops a running analysis.
+  **Songs analysed at once** runs several analyses side by side. The
+  starting value and the limit depend on your computer: OpenCrate looks at how
+  many fast cores and how much memory it has (on a Mac with 4 fast cores and
+  16 GB, it starts at 2 and allows up to 6; a bigger chip gets more, a small
+  laptop fewer). Each one uses about 0.8 GB of memory. In a test on that Mac, 2
+  at once was about 1.5× faster and 4 about 2×; beyond the number of fast cores
+  it stopped helping (8 was slower than 1). If there isn't enough free memory
+  when analysis starts, OpenCrate uses fewer. Lower it if you play out of
+  Rekordbox or Engine DJ while OpenCrate analyses.
 - **Appearance → Theme:** Dark, Light, Gray, High contrast or Classic
   Winamp.
 - **Appearance → Accent colour:** pick any colour (click the square for a
@@ -1144,6 +1282,9 @@ Settings are grouped in a sidebar:
   - **Where Tidy writes its changes:** write into Rekordbox's library, and
     keep Engine DJ's library in step (both on by default). The same switches
     are on the Tidy screen.
+  - **Missing artwork:** **Add artwork found online without asking** (off by
+    default). Only Exact matches are added by themselves, and they are
+    backed up and can be undone.
   - **Before changing audio files, back up…** **Tags and artwork only**
     (recommended: small backups, and undo still restores the exact original
     file) or **The entire file** (a full copy of every file before it's
@@ -1199,8 +1340,10 @@ Planned, but not available in this version:
 - Exporting to a USB stick from Engine DJ's library or an XML export
 - Importing tracks from a stick that your library doesn't have yet
 - Cleaning old copies of music off a stick
-- Looking up track info and album art online, and shrinking artwork for
-  players
+- Looking up track info (genre, year, album, label) online, identifying
+  songs by their sound (AcoustID) and Discogs for track info (it is used for
+  covers only); writing Rekordbox's own
+  artwork
 - Converting audio files (e.g. to AIFF or MP3)
 - Scheduled backups
 
