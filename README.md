@@ -19,13 +19,14 @@ files so they work on every player.
 4. [Library: browsing your tracks](#library-browsing-your-tracks)
 5. [Sync: Rekordbox to Engine DJ](#sync-rekordbox-to-engine-dj)
 6. [Tidy: cleaning up your library](#tidy-cleaning-up-your-library)
-7. [Player Preferences: settings on a USB stick](#player-preferences-settings-on-a-usb-stick)
-8. [Remote library: players browse OpenCrate over the network](#remote-library-players-browse-opencrate-over-the-network)
-9. [Backups: undoing changes](#backups-undoing-changes)
-10. [Settings](#settings)
-11. [The status bar](#the-status-bar)
-12. [Not in OpenCrate yet](#not-in-krate-yet)
-13. [Reporting problems](#reporting-problems)
+7. [Convert: changing audio formats](#convert-changing-audio-formats)
+8. [Player Preferences: settings on a USB stick](#player-preferences-settings-on-a-usb-stick)
+9. [Remote library: players browse OpenCrate over the network](#remote-library-players-browse-opencrate-over-the-network)
+10. [Backups: undoing changes](#backups-undoing-changes)
+11. [Settings](#settings)
+12. [The status bar](#the-status-bar)
+13. [Not in OpenCrate yet](#not-in-krate-yet)
+14. [Reporting problems](#reporting-problems)
 
 ---
 
@@ -1002,6 +1003,67 @@ songs in OpenCrate's own library are shared, and only with players you allow.
 - Other programs on the network can see the shared library only after you
   allow their player; nothing is shared while the setting is off.
 
+## Convert: changing audio formats
+
+Converts tracks to FLAC, WAV, AIFF, Apple Lossless (ALAC), AAC or MP3. The
+converter (FFmpeg) is part of OpenCrate; there is nothing to install.
+
+**Choose your default format** in Settings → Convert (AIFF to begin with).
+
+**Convert new songs automatically.** Tick **Convert new songs automatically
+when they are added to OpenCrate** in Settings → Convert (off to begin with).
+After that, songs you drag into OpenCrate (or into a playlist) or add with
+**Add music** are converted to your default format first, the library points at
+the converted file, and only then are they analysed. Songs that can't be
+converted without losing quality, or that already have a converted copy beside
+them, are added as they are. The status bar shows the progress and a
+**Cancel** button.
+
+**Convert some tracks.** Select them in the Library and choose **Convert to
+AIFF** (or your default format) from the track menu. It starts at once; the
+status bar shows the progress and a **Cancel** button. Afterwards a message
+tells you how many were converted and how many were skipped and why.
+
+**Convert a whole library or playlists.** Open the **Convert** tab, choose
+where to look (the whole library, one library, or ticked playlists), and click
+**Scan**. OpenCrate checks every file and shows what it found: how many
+files can be converted (by current format, with their total size), how many
+are already in the target format, which were skipped and why, and any missing
+files. Click **Convert N files** to run them; **Cancel** stops after the
+song being converted (files already done stay done).
+
+For every conversion the original file is never changed or deleted. The new
+file goes next to it, with the new extension (a number is added if the name is
+taken). Tags and embedded artwork are copied (WAV and AIFF files can't carry
+artwork).
+
+**OpenCrate never makes a file "better" than it is.** Files that would only
+get bigger are skipped, and the scan doesn't offer them:
+
+- a lossy file (MP3, AAC) can't become FLAC, WAV, AIFF or ALAC,
+- a lossy file can't be written at a higher bit rate than it has (a 192
+  kbit/s MP3 to AAC stays at 192), and converting an MP3 to MP3 at the same
+  rate is refused,
+- lossless files (FLAC, WAV, AIFF, ALAC) can become anything. They keep
+  their bit depth (24-bit stays 24-bit).
+
+**Switch tracks to the new files.** By default (Settings → Convert, or the
+box in the Convert tab) the track in OpenCrate, Rekordbox and Engine DJ is
+pointed at the converted file instead of the original. Cues, loops,
+beatgrids, ratings and playlists stay with the track; Engine DJ's cue and
+beatgrid positions are adjusted for the difference in MP3 timing between the
+apps. Rekordbox and Engine DJ must be closed (OpenCrate tells you before it
+converts anything if one is open), and each library is backed up first.
+**Undo switch**, and the **Earlier switches** list in the Convert tab, put the
+libraries back on the original files. The original files stay on your disk
+either way; delete them yourself when you are happy.
+
+Cue positions on a converted MP3 haven't been checked against real players
+yet. After converting to MP3 or AAC, play a few cues to make sure they still
+land where they should, and undo the switch if they don't.
+
+---
+
 ## Player Preferences: settings on a USB stick
 
 The **Player Preferences** tab (in **Sync**, next to **Libraries** and **USB stick**) edits what a DJ player takes from a USB stick, the
@@ -1344,7 +1406,6 @@ Planned, but not available in this version:
   songs by their sound (AcoustID) and Discogs for track info (it is used for
   covers only); writing Rekordbox's own
   artwork
-- Converting audio files (e.g. to AIFF or MP3)
 - Scheduled backups
 
 The Windows version hasn't been tested much yet; reports are especially
