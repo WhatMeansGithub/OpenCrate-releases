@@ -1,11 +1,11 @@
 {
-  "version": "0.1.27",
-  "notes": "\n### New\n- **Convert audio files.** Select tracks and choose **Convert to AIFF** (the\n  default format is set in Settings → Convert): it just runs, with progress\n  and Cancel in the status bar. The Convert tab scans your whole library or\n  chosen playlists, lists every file that can be converted, and converts\n  them. Supported: FLAC, WAV, AIFF, Apple Lossless, AAC and MP3, with tags\n  and artwork kept. The converter is built in. OpenCrate never upconverts: a\n  lossy file can't become lossless or get a higher bit rate, and lossless\n  files keep their bit depth. Originals are never changed or deleted.\n- **Convert new songs automatically.** A new setting in Settings → Convert\n  converts songs to your default format as you add them to OpenCrate (drag\n  FLAC files into a playlist, say); they are then analysed as usual.\n- **Switch to the converted file.** After converting, OpenCrate points the\n  tracks in OpenCrate, Rekordbox and Engine DJ at the new files (cues,\n  loops, grids, ratings and playlists are kept; each library is backed up\n  first) and can undo it. Cue positions on converted MP3s haven't been\n  checked on real players yet.\n\n### Changed\n- The installer is bigger (about 11 MB) because it now contains the audio\n  converter.\n",
-  "pub_date": "2026-11-19T01:32:21Z",
+  "version": "0.1.28",
+  "notes": "\n### Fixed\n- **Convert tab: Scan now shows its results.** In 0.1.27 the scan ran but its\n  results disappeared as soon as it finished.\n",
+  "pub_date": "2026-11-19T01:45:00Z",
   "platforms": {
     "darwin-aarch64": {
-      "url": "https://github.com/WhatMeansGithub/OpenCrate-releases/releases/download/v0.1.27-alpha/OpenCrate_aarch64.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWWdicHFCOW5HOHpucCtPQWFiZ1VGUXI2ZTUwcWF0UWdicTUrZVF2Y0N4QkRuZmZKU0xQU1NtVjEzVUh1NW1mVER4UkR1ZlJmTDliRVhVTWI1bWJ3c0FFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDUxOTQxCWZpbGU6T3BlbkNyYXRlLmFwcC50YXIuZ3oJdmVyc2lvbjowLjEuMjcKM2NXYTdWOHdWTXRaamMrSUhRc1NPUUxkQk9EQnJLSDRwOTRIYVVzY290MDFvVWFrWExTQ1RTK2V1ZHRwU0d2a2d5Y2hWVGhVdFQ4TXJ2WFNSQUFjQXc9PQo="
+      "url": "https://github.com/WhatMeansGithub/OpenCrate-releases/releases/download/v0.1.28-alpha/OpenCrate_aarch64.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTNmhKSm10bnkrWXQ5dU5XcklDUWlOVUxHaURiQ281M05ta21wU091YUFNbHI2UUVab2J5T0s3MXljUlArb2l6NzJpcDJ6T1ZXSGE1c09vNG5oeHBmNWY3ZHJtWGFHQXdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDUyNzAwCWZpbGU6T3BlbkNyYXRlLmFwcC50YXIuZ3oJdmVyc2lvbjowLjEuMjgKM1gvOUJZc21WUG9MQlZybmdKSXdnU1h6NDJqN05DdkdnOGc1MUxPaFhobm9IZ1lqNzI3b1RtUm1pWC9ITlBJT3hPSEd5T0RpY3MzNGhTRW12T1hpQmc9PQo="
     }
   }
 }
