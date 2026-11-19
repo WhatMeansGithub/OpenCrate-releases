@@ -223,7 +223,9 @@ that in Settings → General.
   **Delete…** it (its tracks stay in the collection). Drag tracks from the
   list onto a playlist to add them, or right-click a track and choose
   **Add to playlist ▸** (folders open as submenus; tracks a playlist
-  already has aren't added twice); inside a playlist, right-click a track
+  already has aren't added twice). The first entry there, **New playlist from
+  track…** (or **from N tracks…** with several selected), asks for a name and
+  makes a new playlist in this library with those tracks in it; inside a playlist, right-click a track
   for **Remove from playlist**. Both work on all selected tracks. **Drag to reorganise:** drag a playlist
   or folder onto a playlist to put it right below, onto a folder to put
   it inside, or onto the library name to put it at the top; inside a
@@ -469,9 +471,11 @@ info, ratings, cues, loops and beatgrids), and applies it without asking:
   "info rating".
 - Changed in **Engine DJ**: with **Two-way** ticked (the default when
   syncing from Rekordbox's library), copied back into Rekordbox: track
-  info, ratings, hot cues and beatgrids. Only the fields you changed are
-  written; Rekordbox's memory cues stay. Rekordbox is backed up first and
-  must be closed. Loops changed in Engine DJ stay there for now.
+  info, ratings, hot cues, loops and beatgrids. Only the fields you changed
+  are written; Rekordbox's memory cues and memory loops stay. Engine DJ's
+  loops become hot loops on the same pad in Rekordbox (a loop on a pad
+  that already holds a hot cue becomes a memory loop there). Rekordbox is
+  backed up first and must be closed.
 - **Playlists** made or changed in **Engine DJ** (with Two-way): new
   playlists and folders are created in Rekordbox with Engine DJ's tracks
   in its order; tracks added or moved in Engine DJ are added or moved in
@@ -487,9 +491,11 @@ info, ratings, cues, loops and beatgrids), and applies it without asking:
   preview updates. Undecided ones aren't written and come up again next
   time.
 - Cues or loops **removed** in one app stay in the other.
-- **Probably the same track, moved:** tracks that look like a moved copy
-  of one OpenCrate knows (same size, length, artist and title). They're only
-  listed for now, not linked.
+- **Moved copies:** a track at a different path in the other library (for
+  example on a stick) is recognised as the same song when exactly one song
+  fits (same size, length, artist and title). **Probably the same track,
+  moved** lists the ones where several fit; they're not linked. To repair
+  files that moved on this computer, use Tidy → Moved files.
 
 The first sync between two libraries works as before; remembering starts
 from there.
@@ -819,8 +825,14 @@ whichever app it came from); you can instead choose a Rekordbox or Engine DJ
 library on this computer (not Rekordbox XML, not USB sticks),
 and you see everything before anything is written.
 
-**Missing artwork.** OpenCrate lists tracks whose audio file has no cover
-picture and searches for one online by artist and title. For searching, the
+The Artwork tab has three parts, chosen with the strip along the top:
+**Missing covers**, **Shrink covers** and **Undo**. Each has its own list and
+its own main button (highlighted); a number on the part shows how many items
+it has. Switching between them doesn't lose your results.
+
+**Missing covers.** Click **Find covers**: OpenCrate lists tracks whose audio file has no cover
+picture and, in the same step, searches for one online by artist and title.
+(**Just list them** only lists the tracks; **Look up online** then searches.) For searching, the
 text is cleaned the same way Smart fixes cleans it: promo text, web
 addresses, track numbers, mix names and "feat." parts are ignored. Each
 candidate image is shown with a badge:
@@ -869,7 +881,7 @@ To skip the checking, turn on **Add artwork found online without asking**
 in Settings. Then only Exact matches are added by themselves; Maybe ones
 still wait for you. Those are backed up and can be undone too.
 
-**Shrink artwork.** Lists the covers that Health flags (too big, PNG or
+**Shrink covers.** Lists the covers that Health flags (too big, PNG or
 unknown format, CMYK, progressive JPEG) and shows each one's size before and
 after, with the reason. Only the ones worth changing are ticked: covers that
 are too big and get smaller, covers in a format players can't show (CMYK,
@@ -922,13 +934,45 @@ problems, grouped by how serious they are:
 Click a group to see its tracks. The check uses all your computer's cores, so
 a big library is read quickly.
 
+### Moved files
+
+If you moved or renamed music files outside OpenCrate, the songs show as
+missing and won't play. **Tidy → Moved files** finds them again and points
+OpenCrate, Rekordbox and Engine DJ at the new files. Cues, loops, beatgrids,
+ratings and playlists stay with the song.
+
+1. **Search in:** OpenCrate suggests the folders where most of your music
+   lives. Remove any you don't want, and **Add folder…** for the place the
+   files moved to (a different drive, a renamed folder).
+2. Click **Find moved files**. OpenCrate looks at every audio file in those
+   folders and compares it with each missing song by file size and length.
+   Nothing is changed.
+3. Every found song is labelled:
+   - **sure**: the size is exactly the same and the length agrees. These are
+     ticked for you.
+   - **maybe**: the file name and length agree but the size differs (the file
+     was re-tagged), or only the size agrees. Not ticked; check them.
+   - **choose**: several files fit. Pick the right one from the list.
+   Files that already belong to another song in your library are never offered.
+4. Click **Point … songs at their files**. Rekordbox and Engine DJ must be
+   closed. Each library is backed up first, as with every change OpenCrate
+   makes. **Undo** (next to the result) puts every library back on the old
+   locations; it also appears under Convert's history.
+
+Your audio files are never moved, renamed or deleted. Songs that aren't found
+stay as they were; add the right folder and search again. Only the libraries
+on this computer are searched: songs on a USB stick or in a Rekordbox XML file
+aren't checked.
+
 ### Tag lookup
 
 Fills in **album, year, label and genre** from online services (iTunes, and
 Discogs and MusicBrainz if you switched them on in Settings → Tidy & backups
 → Missing artwork; labels come only from Discogs). Choose which of the four
-fields to fill, then **Find tracks** (tracks missing at least one of them,
-unless you untick that) and **Look up online**. Results appear as they come
+fields to fill, then click **Find tags**: OpenCrate lists the tracks missing
+at least one of them (unless you untick that) and looks them up online in the
+same step (**Just list them** only lists; **Look up online** then searches).
+Results appear as they come
 in, in one list: tracks where only a likely match was found (**Maybe**) are
 at the top for you to check, sure matches (**Exact**) are ticked, and tracks
 with no match are at the end. Every change is shown field by field (for
@@ -1228,6 +1272,13 @@ Settings are grouped in a sidebar:
   buttons and selections, on top of the theme. "Use the theme's colour"
   goes back. The menus inside Sync, Tidy and Backups are highlighted the
   same faint way as the main tabs.
+- **Appearance → App icon:** the picture shows the icon OpenCrate has now;
+  click it to open a window with all the choices (a vinyl record and DJ
+  headphones on white glow (the standard), dark, white, pastel, bright and gradient backgrounds) and
+  click one to use it. It changes the icon in the Dock (Mac) or on the
+  taskbar (Windows) while OpenCrate is open, and is applied again each
+  time you start it. The icon of the app file in Finder or Explorer, and
+  the one shown when OpenCrate is closed, stay the standard one.
 - **Appearance → Track list size:** a slider from smaller (more tracks on
   screen) to larger, with a preview; the list follows as you drag.
   **Reset** goes back to the standard size.
@@ -1398,14 +1449,11 @@ Planned, but not available in this version:
 - More mixing tools: crossfader, beat jump
 - Filter and effects; keyboard shortcuts; DJ controller support; a
   headphone (cue) output
-- Syncing from Engine DJ to Rekordbox
 - Exporting to a USB stick from Engine DJ's library or an XML export
-- Importing tracks from a stick that your library doesn't have yet
 - Cleaning old copies of music off a stick
-- Looking up track info (genre, year, album, label) online, identifying
-  songs by their sound (AcoustID) and Discogs for track info (it is used for
-  covers only); writing Rekordbox's own
+- Identifying songs by their sound (AcoustID); writing Rekordbox's own
   artwork
+- Custom tags and smart playlists
 - Scheduled backups
 
 The Windows version hasn't been tested much yet; reports are especially
