@@ -96,7 +96,30 @@ copy that's still on the disk image.)
 
 ## Getting started
 
-When you first open OpenCrate, it looks for your libraries in their usual
+The very first time you open OpenCrate (a new install with nothing in it), a
+short **setup** walks you through six choices. Each has a recommended pick
+already selected, every step can be left as it is, and **Skip setup** closes
+it at any time:
+
+1. **Your libraries:** *OpenCrate is my main library* (the recommended pick:
+   changes in OpenCrate, Rekordbox and Engine DJ are passed on to each other,
+   and Tidy works on everything without asking which library) or *Keep my DJ
+   apps separate* (you sync by hand).
+2. **Safety:** keep a copy of a file's **tags and artwork** before OpenCrate
+   changes it (recommended), or the **whole file**.
+3. **Analysis:** whether new songs are analysed by themselves, and how keys
+   are shown (sharps, flats, Open Key or Camelot).
+4. **Conversion:** the default format for **Convert to …**, and whether new
+   songs are converted when they are added (off at first).
+5. **Theme:** light, dark, another look, or **Match OS theme**.
+6. **Track list size:** how big the text and rows in the track list are,
+   with a preview.
+
+Everything you pick is a default you can change later in Settings. Settings →
+General → **Run setup again** shows the same steps with your current choices.
+Existing installs never get the setup by themselves.
+
+Then OpenCrate looks for your libraries in their usual
 places:
 
 - **Rekordbox** (6 and 7): your Rekordbox library on this computer.
@@ -238,7 +261,7 @@ that in Settings → General.
   show at once and are saved in the background, in order; if one can't be
   saved (e.g. the app is open), OpenCrate says so and puts the playlists back
   as they are in the library.
-- **Editing a track's info:** click a track to select it, then click a text cell of it again (title, artist, album, genre, label or year) to edit it right in the list: **Enter** saves, **Esc** cancels. Or right-click a track → **Edit info…** to
+- **Editing a track's info:** click a track to select it, then click a text cell of it again (title, artist, album, genre, label, comment or year) to edit it right in the list: **Enter** saves, **Esc** cancels. Or right-click a track → **Edit info…** to
   change its title, artist, album, genre, label, remixer, year or comment.
   Select several tracks first to set a field on all of them at once; a field
   you don't touch keeps each track's own value ("Multiple values" shows
@@ -248,8 +271,38 @@ that in Settings → General.
   backed up first, and **Backups** can undo it. Rekordbox and Engine DJ must
   be closed. Songs from a USB stick or a Rekordbox XML export can't be
   edited (they're copies): edit the song on this computer, then export again.
-- **Format** shows the file type (MP3, AIFF, WAV, FLAC, …). **Bitrate** and
-  **Label** are hidden at first; turn them on with a right-click on the
+- **Your own tags:** right-click one or more tracks → **Tags ▸** to tick
+  the tags they should have (a dash means only some of the selected songs
+  have it), or **New tag…** to make one and put it on them. A tag belongs to
+  the *song* (the audio file), so it shows in Rekordbox, Engine DJ and
+  OpenCrate's own library alike, and stays when you read a library in again.
+  Type **#tagname** in the search box to find the songs with a tag (spaces in
+  a tag's name are written as `-`, and the start of a name is enough, so
+  `#warm` finds "Warm up"). Rename or delete tags in **Settings → Tags**;
+  deleting a tag never touches songs or files. The **Tags** column is hidden
+  at first (right-click the headers). Tags live in OpenCrate only: they aren't
+  written into Rekordbox, Engine DJ or the audio files. When OpenCrate itself
+  converts or relinks a song (Convert, Tidy → Files → Moved files, and their undo), its
+  tags follow the new file; if you move a file yourself outside OpenCrate, the
+  tags stay with the old place. The **Edit info…** dialog also has a **Tags**
+  row (chips with an ✕, and a box to add more); tag changes there are saved at
+  once, not with the dialog's Save button.
+- **Smart playlists:** right-click a library in the sidebar → **New smart
+  playlist…**. A smart playlist is a set of rules that fills itself: pick
+  **all** or **any** of the rules, then add rules such as *tag has Warm up*,
+  *BPM between 120 and 126*, *key is compatible with 8A*, *rating at least 4
+  stars*, *genre contains house*, *added in the last 30 days* or *is in
+  playlist …*. "N songs match" updates while you edit, and genre, artist, album and
+  label rules suggest the values your library has. The sidebar shows how many
+  songs each smart playlist holds. It shows the songs of
+  that library that match **right now** (a copy is never stored), marked with
+  a ⚙ in the sidebar. Right-click it to edit the rules, rename or delete it
+  (deleting only removes the rules). You can't drop songs into a smart
+  playlist; to keep a fixed copy, select its songs and use **New playlist from
+  selection**. Smart playlists live in OpenCrate only: they aren't written to
+  Rekordbox or Engine DJ.
+- **Format** shows the file type (MP3, AIFF, WAV, FLAC, …). **Bitrate**,
+  **Label**, **Comment** and **Tags** are hidden at first; turn them on with a right-click on the
   headers.
 - Drag the **sidebar's right edge** to make it wider or narrower; drag it
   far to the left, or click **‹** next to "Libraries", to hide it. Click
@@ -495,7 +548,7 @@ info, ratings, cues, loops and beatgrids), and applies it without asking:
   example on a stick) is recognised as the same song when exactly one song
   fits (same size, length, artist and title). **Probably the same track,
   moved** lists the ones where several fit; they're not linked. To repair
-  files that moved on this computer, use Tidy → Moved files.
+  files that moved on this computer, use Tidy → Files → Moved files.
 
 The first sync between two libraries works as before; remembering starts
 from there.
@@ -765,10 +818,27 @@ written:
 - **Engine DJ** – if ticked, Engine DJ's library is kept in step (backed
   up first; Engine DJ must be closed).
 
+**When everything is kept in step** (Settings → Sync → *Keep everything in
+step* is on, and Rekordbox and Engine DJ are both ticked under **Changes go
+to** in Settings → Tidy & backups), Tidy hides the library choice and the
+tick boxes: it always works on OpenCrate's whole library and a single line
+says that changes go everywhere. If you untick one of them, or switch the
+mirroring off, the choices come back.
+
 If you change a track in Rekordbox or Engine DJ after Tidy showed its
 preview, OpenCrate notices when you apply: those changes are left out (and
 listed), so Tidy never overwrites an edit you made in the meantime. Scan
 again to see the current values.
+
+Tidy's tools are listed on the left, in three groups, each with a short line
+saying what it does (drag the list's edge to make it wider or narrower):
+
+- **Tags**: [Smart fixes](#smart-fixes), Genres & artists
+  ([Genres and Artists](#genres-and-artists); switch between the two with the
+  buttons above the list) and **Find tags online** ([Tag lookup](#tag-lookup)).
+- **Files**: [Health](#health), [Duplicates](#duplicate-files),
+  [Moved files](#moved-files) and [Artwork](#artwork).
+- **USB stick**: **Check USB stick** ([USB stick](#usb-stick)).
 
 Tidy works on libraries on this computer. It doesn't change Rekordbox XML
 exports (they can be out of date) or USB sticks (those are exported
@@ -934,10 +1004,73 @@ problems, grouped by how serious they are:
 Click a group to see its tracks. The check uses all your computer's cores, so
 a big library is read quickly.
 
+Health also finds FLAC, WAV and AIFF files that were made from an MP3 or
+another lossy file.
+Saving an MP3 as FLAC makes the file bigger but doesn't bring the sound back:
+the top of the spectrum stays empty. OpenCrate decodes every lossless file and
+looks for the frequency where the sound stops, and reports it with what that
+usually means (for example "about 128 kbps MP3"):
+
+- **Fake lossless** (a warning): the sound ends below 19.5 kHz, the typical
+  range of MP3 and AAC files up to about 256 kbps.
+- **Possibly fake lossless** (good to know): it ends between 19.5 and 20.7 kHz.
+  A 320 kbps MP3 ends there, but so does a master that was low-passed on
+  purpose.
+
+It's a hint, not proof. Files below 44.1 kHz, very quiet or very short files
+can't be judged and are left out, and ALAC files (`.m4a`) aren't checked yet.
+The first check is slower than the others because it decodes every lossless
+file. OpenCrate remembers each file's result while the file is unchanged, so
+later checks only listen to new or changed files.
+
+### Duplicate files
+
+**Tidy → Files → Duplicates → Find duplicates** looks for audio files that are
+exact copies of each other (the same bytes, for example `Song.aiff` and
+`Song-1.aiff`) across Rekordbox, Engine DJ and OpenCrate's own library on
+this computer. Finding only reads files. Click a song to see its copies,
+which libraries list each one, how many playlists and cues they carry, and
+which copy stays: a name without a copy suffix (`-1`, `(1)`, `copy`) first,
+then the one with more playlists, cues and rating, then the one added first.
+Click another copy to keep that one instead, or untick a song to leave it
+alone. Only identical files are listed, never the same song in another format
+or mix (use **Merge duplicate songs** for those). The first search reads every
+file that shares its size with another; later searches reuse what was read
+while a file is unchanged. The ✕ in the status bar stops it.
+
+**Remove copies** (button at the top and bottom, usable once you've found
+duplicates): the extra copy's playlist places, cues, rating, tags and
+versions move to the copy that stays, and the extra entry leaves OpenCrate's
+library. If Engine DJ's library is kept in step (the **Changes go to** switch
+on this screen, the same one as the other Tidy tools; on by default) the same
+happens there: playlist places move to the copy
+that stays, and its rating, hot cues, loops and beat grid fill gaps (what the
+kept copy already has is never overwritten). Engine DJ must be closed, and
+its library is backed up first. If no library lists the extra file any more,
+it goes to the **Trash** (Finder's / Explorer's *Put Back* brings it back); a
+file Rekordbox still lists stays where it is.
+
+If Rekordbox's library is kept in step too (the **Rekordbox** switch in the
+same row; Rekordbox must be closed, and its library is backed up first), every
+Rekordbox playlist that held the extra copy gets the copy that stays in its
+place (once, if it held both), and the rating is carried over if the kept copy
+has none. The extra **track itself stays in Rekordbox's collection** for now,
+so its file stays on disk too: select those tracks in Rekordbox and use
+*Remove from Collection*; the next time you run Find duplicates they are the
+only copies left. A pair is only changed in Rekordbox when the copy that stays
+is in Rekordbox as well.
+
+**Undo last removal** puts OpenCrate's, Engine DJ's and Rekordbox's libraries
+back to how they were. It refuses if either changed since (so nothing you did
+afterwards is lost) and says why. OpenCrate doesn't move files out of the
+Trash itself: it lists them so you can use Put Back. A record of each removal
+and a copy of OpenCrate's library from before it are kept in OpenCrate's data
+folder (`duplicate-sets`).
+
 ### Moved files
 
 If you moved or renamed music files outside OpenCrate, the songs show as
-missing and won't play. **Tidy → Moved files** finds them again and points
+missing and won't play. **Tidy → Files → Moved files** finds them again and points
 OpenCrate, Rekordbox and Engine DJ at the new files. Cues, loops, beatgrids,
 ratings and playlists stay with the song.
 
@@ -983,7 +1116,7 @@ Rules that keep your library safe: **titles and artists are never touched**
 default only empty fields are filled; **Replace differing values too**
 also overwrites existing ones. For the year, OpenCrate uses the original
 release year, not a compilation's or a reissue's. Applying works like the
-other Tidy tabs: the audio files, Engine DJ and Rekordbox are updated (each
+other Tidy parts: the audio files, Engine DJ and Rekordbox are updated (each
 backed up first), and Undo in Backups puts everything back. If a song is on
 several albums you see the one OpenCrate picked before you apply, and can
 untick it.
@@ -1215,8 +1348,8 @@ restored or brought back.
 Every time Tidy changed audio files: what changed in which file, and
 whether Rekordbox and Engine DJ were updated. **Undo these changes**
 restores the files exactly as they were (byte for byte) and puts the old
-values back in Rekordbox and Engine DJ. Artwork changes (Tidy → Artwork) are
-listed here too; undo those in Tidy → Artwork. Each record shows how much disk
+values back in Rekordbox and Engine DJ. Artwork changes (Tidy → Files → Artwork) are
+listed here too; undo those in Tidy → Files → Artwork. Each record shows how much disk
 space its backups use. **Delete selected…** (or **Delete undone records…**)
 removes records and their backups to free space, after asking; those changes
 can then no longer be undone.
@@ -1265,7 +1398,17 @@ Settings are grouped in a sidebar:
   it stopped helping (8 was slower than 1). If there isn't enough free memory
   when analysis starts, OpenCrate uses fewer. Lower it if you play out of
   Rekordbox or Engine DJ while OpenCrate analyses.
-- **Appearance → Theme:** Dark, Light, Gray, High contrast or Classic
+  **BPM range** (Auto, 58 - 115, 68 - 135, 78 - 155, 88 - 175 or 98 - 195)
+  makes the analyser halve or double a tempo that falls outside it, so a
+  tempo isn't found at half or double speed; it applies to tracks analysed
+  from then on (right-click → **Analyze** redoes one). **Key notation**
+  shows keys as stored, with Sharps (C#m), Flats (Dbm), Open Key (12m) or
+  Camelot (12A) in the track list and on the decks; the stored key never
+  changes. **Find missing keys** works out the key of songs in OpenCrate's
+  own library that have none (it only fills empty keys; the ✕ in the status
+  bar stops it).
+- **Appearance → Theme:** Match OS theme (light or dark as your computer is
+  set, changing with it), Dark, Light, Gray, High contrast or Classic
   Winamp.
 - **Appearance → Accent colour:** pick any colour (click the square for a
   colour wheel, or one of the dots) for the highlight of the chosen tab,
@@ -1328,6 +1471,29 @@ Settings are grouped in a sidebar:
     figures come from. Pioneer doesn't publish the exact curves of the
     DJM-900NXS2 and DJM-A9, so those two are approximations. Switching puts
     the EQ knobs back in the centre.
+  - **Playback:** **A loaded track starts at** its cue point (as before) or
+    the start of the track (0:00). **Sync matches** Bar (downbeats line up,
+    falling back to the beat for half or double time), Beat (as before) or
+    Tempo only (no phase jump). **Sync button:** a click switches sync on and
+    off, or a click switches it on and Shift+click off. **Quantize new cues and
+    loops to** Off, 1/4 beat, 1/2 beat, 1 beat (as before) or 1 bar; the deck's
+    Q button still switches it on and off. **Time display:** *Static* shows
+    the track's original time; *Dynamic* scales elapsed and remaining time by
+    the tempo fader, so it shows the real time left. **Waveform zoom:** 2 to
+    60 seconds of track on the deck waveform (the magnifier buttons still
+    change one deck).
+- **Audio → Sound format:** **Sample rate** (the device's own, or 44.1, 48,
+  88.2 or 96 kHz), **Buffer size** (the device's own, or 128 to 2048 frames:
+  smaller means less delay but can crackle) and **Output channels** (1/2, 3/4
+  and so on, for an audio interface or DJ controller; the other channels stay
+  silent). Only what your device supports is offered. If it can't do a choice
+  OpenCrate plays with the device's own setting and says so. Changing one
+  reloads the decks: tracks pause and stay where they were.
+- **Library → Cues:** **Hot and memory cues** (default), **Hot cues only** or
+  **Memory cues only**: which cues the deck cue list shows and Sync to Engine
+  DJ copies (Engine DJ has no memory cues, so they go into free hot cue
+  slots). It never deletes or overwrites anything in a library. The Rekordbox
+  writers don't use it yet.
 - **Audio → Output device:** where the decks play: **System default**
   (your computer's sound setting) or a specific device such as headphones,
   an audio interface or a DJ controller. Switching pauses anything playing;
@@ -1453,7 +1619,9 @@ Planned, but not available in this version:
 - Cleaning old copies of music off a stick
 - Identifying songs by their sound (AcoustID); writing Rekordbox's own
   artwork
-- Custom tags and smart playlists
+- Removing the extra duplicate tracks from Rekordbox's collection (Tidy → Files →
+  Duplicates moves their playlist places and rating, but the tracks stay
+  until you remove them in Rekordbox); tags in Rekordbox's My Tags
 - Scheduled backups
 
 The Windows version hasn't been tested much yet; reports are especially
